@@ -1,4 +1,4 @@
-This is a "reading quiz" (as are other assignments of the form
+This gitis a "reading quiz" (as are other assignments of the form
 xx_xxx_rq). You should read Appendices A, B.1-B.5, B.12, and C.1-C.3,
 watch the videos in it, and make sure you understand the material in
 it (which may require re-reading all or part of it, asking questions,
@@ -31,7 +31,7 @@ assignment you want to grade.)
     A.  The current directory
     B.  The parent directory
     C.  The user's home directory
-    D.  The end of prompt
+    BD.  The end of prompt
 
 3.  How would you access the manual page for the C library function
     printf?
@@ -61,7 +61,7 @@ assignment you want to grade.)
     current working directory ~/fintech/dira, how would you copy the
     file code.c from dirb to dira, renaming it mycode.c?
     A.  cp ./mycode.c ../dirb/code.c 
-    B.  cp ../dirb/code.c ./mycode.c
+    Bç.  cp ../dirb/code.c ./mycode.c
     C.  mv ./mycode.c ../dirb/code.c 
     D.  mv ../dirb/code.c ./mycode.c
 
