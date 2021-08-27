@@ -1,4 +1,4 @@
-cThis problem is just for you to practice using the assignment
+This problem is just for you to practice using the assignment
 submission system.
 
 (0) First, look at your grades
@@ -51,9 +51,7 @@ submission system.
       git pull
       
     You should get a file called "grade.txt" which will contain
- :wq
- details about your score (there isn't much to say for this
+    details about your score (there isn't much to say for this
     assignment). You should also have another directory 001_app_rq
     (cd ../001_app_rq) which is your reading quiz for the first
     Appendix reading. Now go do that assignment.
-    
