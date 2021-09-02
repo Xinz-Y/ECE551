@@ -1,6 +1,6 @@
-Grading at 09/02/2021:17:45:35.291222
-For commit ID 79b8d511c3740e14b82dd87dd8f966b4c500f20f
-Grading at Thu Sep  2 13:45:35 EDT 2021
+Grading at 09/02/2021:17:52:17.088509
+For commit ID f71399190995b51690a79dc8cdacbac966df5f12
+Grading at Thu Sep  2 13:52:16 EDT 2021
 Checking code2.c for legal syntax
 Checking for int printTriangle (int size)
 Found on line 4, column 1 
