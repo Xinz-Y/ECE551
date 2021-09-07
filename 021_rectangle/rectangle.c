@@ -51,6 +51,9 @@ int top(int y, int height) {
 
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
+  r1 = canonicalize(r1);
+  r2 = canonicalize(r2);
+
   rectangle reg_inter;
   reg_inter.x = max(r1.x, r2.x);
   reg_inter.y = max(r1.y, r2.y);
