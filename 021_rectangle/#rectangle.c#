@@ -62,20 +62,16 @@ rectangle intersection(rectangle r1, rectangle r2) {
   int right2 = right(r2.x, r2.width);
   int right = min(right1, right2);
   reg_inter.width = right - reg_inter.x;
-  if (reg_inter.width < 0) {
+  if (reg_inter.width <= 0) {
     reg_inter.width = 0;
-    reg_inter.height = 0;
-    return reg_inter;
   }
 
   int top1 = top(r1.y, r1.height);
   int top2 = top(r2.y, r2.height);
   int top = min(top1, top2);
   reg_inter.height = top - reg_inter.y;
-  if (reg_inter.height < 0) {
+  if (reg_inter.height <= 0) {
     reg_inter.height = 0;
-    reg_inter.width = 0;
-    return reg_inter;
   }
 
   return reg_inter;
