@@ -11,18 +11,14 @@ void run_check(unsigned x, unsigned y, unsigned expected_ans) {
 }
 
 int main(void) {
-  run_check(0, 2, 0);
-  run_check(1, 0, 1);
-  run_check(10000, 0, 1);
-
-  run_check(0, 0, 0);
+  //run_check(0, 0, 0);
+  run_check(0, 0, 1);
   run_check(0, 1, 0);
-  run_check(0, 1000000000, 0);
-  run_check(3, 4, 81);
-  run_check(1, 1, 1);
-  run_check(2, 2, 4);
-  run_check(2, 10, 1024);
-  run_check(1, 100000000, 1);
-  run_check(1000000, 1, 1000000);
+  run_check(1, 0, 1);
+  run_check(2, 0, 1);
+  run_check(3, 3, 27);
+  run_check(5, 4, 625);
+  run_check(100000, 1, 100000);
+  run_check(1, 100000, 1);
   return EXIT_SUCCESS;
 }
