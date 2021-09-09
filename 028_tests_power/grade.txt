@@ -1,6 +1,6 @@
-Grading at 09/09/2021:04:35:54.845160
-For commit ID 17daa59bf74ebca8ee7650d85aefc709fef049fa
-Grading at Thu Sep  9 00:35:54 EDT 2021
+Grading at 09/09/2021:04:43:46.728131
+For commit ID fbfc7f06f92d1fb9964e580d0028dc7bc26195a3
+Grading at Thu Sep  9 00:43:45 EDT 2021
 **Testing broken implementation 10 **
 -------------------------------------
 
@@ -20,6 +20,36 @@ Grading at Thu Sep  9 00:35:54 EDT 2021
 **Testing broken implementation 3 **
 -------------------------------------
 
-Your test program did not identify /usr/local/ece551/power/power3.o as broken!
 
-Overall Grade: FAILED
+**Testing broken implementation 4 **
+-------------------------------------
+
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED
