@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  int b = 297 % 10;
+  printf("%d", b);
+  return 0;
+}
