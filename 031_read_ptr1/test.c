@@ -16,7 +16,6 @@ void f(int * a, int b) {
   printf("Back in f, *a = %d, b = %d\n", *a, b);
 }
 
-
 int main(void) {
   int x = 3;
   int y = 4;
