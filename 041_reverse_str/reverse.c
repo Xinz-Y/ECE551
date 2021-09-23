@@ -17,7 +17,9 @@ void reverse(char * str) {
   for (int i = 0; i < count; i++) {
     str_n[i] = str[count - 1 - i];
   }
-  strncpy(str, str_n, count + 1);
+  if (count != 0) {
+    strncpy(str, str_n, count + 1);
+  }
 }
 
 int main(void) {
