@@ -3,6 +3,9 @@
 #include <string.h>
 
 void reverse(char * str) {
+  if (!str) {
+    return;
+  }
   const char * p = str;
   int count = 0;
   while (*p != '\0') {
