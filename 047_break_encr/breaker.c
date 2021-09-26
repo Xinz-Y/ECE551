@@ -10,23 +10,24 @@ int decrypt(FILE * f) {
       c -= 'a';
       freq[c]++;
     }
+  }
 
-    int max = 0;
-    int id;
-    for (int i = 0; i < 26; i++) {
-      if (freq[i] > max) {
-        max = freq[i];
-        id = i;
-      }
-    }
-
-    if (id - 4 > 0) {
-      key = id - 4;
-    }
-    else {
-      key = id - 4 + 26;
+  int max = 0;
+  int id;
+  for (int i = 0; i < 26; i++) {
+    if (freq[i] > max) {
+      max = freq[i];
+      id = i;
     }
   }
+
+  if (id - 4 > 0) {
+    key = id - 4;
+  }
+  else {
+    key = id - 4 + 26;
+  }
+
   return key;
 }
 
