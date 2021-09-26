@@ -21,7 +21,7 @@ int decrypt(FILE * f) {
     }
   }
 
-  if (id - 4 > 0) {
+  if (id - 4 >= 0) {
     key = id - 4;
   }
   else {
