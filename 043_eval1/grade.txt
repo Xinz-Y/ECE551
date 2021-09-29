@@ -1,6 +1,6 @@
-Grading at 09/29/2021:16:11:54.286365
-For commit ID fd04d4941a5a451e421c15dc186f73d5dde0b616
-Grading at Wed Sep 29 12:11:48 EDT 2021
+Grading at 09/29/2021:16:17:02.982036
+For commit ID e6277fde651947db1acf7aadef64a4cf025bd62a
+Grading at Wed Sep 29 12:16:54 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -37,8 +37,34 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o pr
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_small.csv
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printRunningAvg population.csv daily_cases.csv
+Your file matched the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+Compiling printCumulative
+rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCumulative.o -o printCumulative
++-----------------------------------------------------------------------+
+Test case printCumulative population.csv daily_small.csv
+Line_4_did_not_match
+Line_6_did_not_match
+Line_14_did_not_match
+Line_18_did_not_match
+Your file did not match the expected output
++-----------------------------------------------------------------------+
+Test case printCumulative population.csv daily_cases.csv
+Line_2_did_not_match
+Line_4_did_not_match
+Line_6_did_not_match
+Line_8_did_not_match
+Line_10_did_not_match
+Line_12_did_not_match
+Line_14_did_not_match
+Line_16_did_not_match
+Line_18_did_not_match
+Your file did not match the expected output
+
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
