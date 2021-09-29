@@ -25,8 +25,8 @@ country_t parseLine(char * line) {
       exit(EXIT_FAILURE);
     }
     char * ptr_string;
-    // return a long long type, and in decimal
-    ans.population = (uint64_t)strtoll(line + 1, &ptr_string, 10);
+    // return a unsigned long long type(max is 2^64 -1), and in decimal
+    ans.population = (uint64_t)strtoull(line + 1, &ptr_string, 10);
   }
   else {
     // if there is somthing before comma, then split the string by strtok function
@@ -43,7 +43,7 @@ country_t parseLine(char * line) {
     char * string_n = strtok(NULL, ",");
     char * ptr_char;
     long long pop;
-    pop = strtoll(string_n, &ptr_char, 10);
+    pop = strtoull(string_n, &ptr_char, 10);
     if (pop == 0) {
       fprintf(stderr, "No number in the population\n");
       exit(EXIT_FAILURE);
