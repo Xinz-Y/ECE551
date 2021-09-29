@@ -1,6 +1,6 @@
-Grading at 09/29/2021:02:37:54.749025
-For commit ID c45d9cd04a3a0bfdbec2bb519f271fc256eafec2
-Grading at Tue Sep 28 22:37:49 EDT 2021
+Grading at 09/29/2021:02:40:43.638455
+For commit ID cb0875999537617072266788e6b3203136c0f203
+Grading at Tue Sep 28 22:40:38 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -11,8 +11,7 @@ Test case printCountries invalid1.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid2.csv
-China: 0
-Your program did not indicate a failure case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid3.csv
 Your program successfully indicated a failure case
@@ -25,8 +24,11 @@ Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case printCountries valid2.csv
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case printCountries valid3.csv
+Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
