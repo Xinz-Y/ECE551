@@ -29,10 +29,10 @@ country_t parseLine(char * line) {
   // if there is no string before comma,accpet
   if (strchr(line, ',') == line) {
     // Do nothing to the name
-    printf("The country name is %s\n", ans.name);
+    // printf("The country name is %s\n", ans.name);
     char * ptr_char2;
     ans.population = (uint64_t)strtoll(line + 1, &ptr_char2, 10);
-    printf("Population is %" PRIu64 "\n", ans.population);
+    // printf("Population is %" PRIu64 "\n", ans.population);
   }
   else {
     // split the string
