@@ -34,11 +34,6 @@ country_t parseLine(char * line) {
     char * token = strtok(line, ",");
     strncpy(ans.name, token, 64);
     char * end = strchr(token, '\0');
-    // printf("end's address is %p\n", end);
-    // printf("start of token is at %p\n", token);
-    // printf("This is should be the same as the line %p\n", line);
-    // printf("The cha after end is %c\n", *(end + 1));
-
     // check if the string after comma is empty
     if (*(end + 1) == '\0') {
       fprintf(stderr, "Nothing after comma\n");
@@ -61,6 +56,11 @@ country_t parseLine(char * line) {
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
+  double sum = 0;
+  for (int i = 0; i < n_days; i++) {
+    sum += data[i];
+  }
+  *avg = sum / n_days;
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
