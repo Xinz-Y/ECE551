@@ -3,6 +3,7 @@ printCountries invalid1.csv
 printCountries invalid2.csv
 printCountries invalid3.csv
 printCountries invalid4.csv
+printCountries invlaid5.csv
 printCountries invalid_TooLargeNum.csv
 printCountries invalid_TooLargeNum_name.csv
 
@@ -11,9 +12,13 @@ printCountries valid1.csv
 printCountries valid2.csv
 printCountries valid3.csv
 printCountries valid4.csv
+
+
 printRunningAvg population.csv daily_small.csv
 printRunningAvg population.csv daily_cases.csv
+
 printCumulative population.csv daily_small.csv
 printCumulative population.csv daily_cases.csv
+
 printDailyMax population.csv daily_small.csv
 printDailyMax population.csv daily_cases.csv

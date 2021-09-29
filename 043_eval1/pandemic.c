@@ -6,6 +6,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+void check_aftercomma(uint64_t population) {
+  // check if string after comma contains numbers
+  if (population == 0) {
+    fprintf(stderr, "No number in the population\n");
+    exit(EXIT_FAILURE);
+  }
+  //check if the population is no more than 2^64-1
+  if (errno != 0) {
+    perror("string to number errors");
+    exit(EXIT_FAILURE);
+  }
+}
+
 country_t parseLine(char * line) {
   //WRITE ME
   country_t ans;
@@ -28,19 +42,10 @@ country_t parseLine(char * line) {
     char * ptr_string;
     // return a unsigned long long type(max is 2^64 -1), and in decimal
     uint64_t population = (uint64_t)strtoull(line + 1, &ptr_string, 10);
-    //check if the population is no more than 2^64-1
-    if (errno != 0) {
-      perror("string to number errors");
-      exit(EXIT_FAILURE);
-    }
-    // check if the population start with non-number
+    check_aftercomma(population);
     ans.population = population;
   }
 
-  // check if the population lagrer than 2^64 -1
-  // *ptr_string='\0';
-  // char * pop_star;
-  // while(*(line +1 ))
   else {
     // if there is somthing before comma, then split the string by strtok function
     char * token = strtok(line, ",");
@@ -57,15 +62,7 @@ country_t parseLine(char * line) {
     char * ptr_char;
     uint64_t pop;
     pop = (uint64_t)strtoull(string_n, &ptr_char, 10);
-    if (pop == 0) {
-      fprintf(stderr, "No number in the population\n");
-      exit(EXIT_FAILURE);
-    }
-    if (errno != 0) {
-      perror("string to number errors");
-      exit(EXIT_FAILURE);
-    }
-
+    check_aftercomma(pop);
     ans.population = pop;
     // printf("Population is %" PRIu64 "\n", ans.population);
   }
