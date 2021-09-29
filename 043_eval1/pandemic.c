@@ -17,20 +17,19 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
 
-  // if there is no string before comma,accpet
+  // if there is no string before comma, we do nothing and accpet
   if (strchr(line, ',') == line) {
-    // Do nothing to the name
-    // but we have to check if nothing after comma
+    // But we have to check if something after comma. If not, then reject.
     if (*(line + 1) == '\0') {
-      fprintf(stderr, "nothing after comma\n");
+      fprintf(stderr, "Nothing after comma\n");
       exit(EXIT_FAILURE);
     }
-    char * ptr_char2;
-    ans.population = (uint64_t)strtoll(line + 1, &ptr_char2, 10);
-    // printf("Population is %" PRIu64 "\n", ans.population);
+    char * ptr_string;
+    // return a long long type, and in decimal
+    ans.population = (uint64_t)strtoll(line + 1, &ptr_string, 10);
   }
   else {
-    // split the string
+    // if there is somthing before comma, then split the string by strtok function
     char * token = strtok(line, ",");
     strncpy(ans.name, token, 64);
     char * end = strchr(token, '\0');
@@ -39,7 +38,7 @@ country_t parseLine(char * line) {
       fprintf(stderr, "Nothing after comma\n");
       exit(EXIT_FAILURE);
     }
-    // printf("The country name is %s\n", ans.name);
+    //covert the string to number
     char * string_n = strtok(NULL, ",");
     char * ptr_char;
     long long pop;
