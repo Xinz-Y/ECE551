@@ -38,7 +38,8 @@ country_t parseLine(char * line) {
       fprintf(stderr, "Nothing after comma\n");
       exit(EXIT_FAILURE);
     }
-    //covert the string to number
+    //since it is accepted more than one comma,strtok fucntnion
+    //will return the second string and ignore the strings after
     char * string_n = strtok(NULL, ",");
     char * ptr_char;
     long long pop;

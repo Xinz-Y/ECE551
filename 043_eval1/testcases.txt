@@ -11,3 +11,4 @@ printCountries valid1.csv
 printCountries valid2.csv
 printCountries valid3.csv
 printCountries valid4.csv
+printRunningAvg population.csv daily_small.csv
