@@ -1,6 +1,6 @@
-Grading at 09/29/2021:02:03:39.252815
-For commit ID 44a6c1b9d4d97de5d9326d16a91c84e62711b7b2
-Grading at Tue Sep 28 22:03:37 EDT 2021
+Grading at 09/29/2021:02:05:34.709781
+For commit ID c16d49431020568416f2168cfcb4943b6d7d3bdb
+Grading at Tue Sep 28 22:05:33 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -11,8 +11,6 @@ Test case printCountries invalid1.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries valid1.csv
-The country name is Brazil
-Population is 212559409
 Your program successfully indicated a failure case
 
 You have PASSED all of your test cases
