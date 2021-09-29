@@ -1,5 +1,10 @@
 #error
 printCountries invalid1.csv
+printCountries invalid2.csv
+printCountries invalid3.csv
+printCountries invalid4.csv
+
+
 
 #success
 printCountries valid1.csv
