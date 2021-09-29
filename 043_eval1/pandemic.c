@@ -43,13 +43,13 @@ country_t parseLine(char * line) {
     //  exit(EXIT_FAILURE);
     //}
     strncpy(ans.name, token, 64);
-    printf("The country name is %s\n", ans.name);
+    // printf("The country name is %s\n", ans.name);
     char * string_n = strtok(NULL, ",");
     char * ptr_char;
     long long pop;
     pop = strtoll(string_n, &ptr_char, 10);
     ans.population = (uint64_t)pop;
-    printf("Population is %" PRIu64 "\n", ans.population);
+    // printf("Population is %" PRIu64 "\n", ans.population);
   }
   return ans;
 }
