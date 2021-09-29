@@ -8,4 +8,4 @@ printCountries invalid4.csv
 
 #success
 printCountries valid1.csv
-printcountries valid2.csv
+printCountries valid2.csv
