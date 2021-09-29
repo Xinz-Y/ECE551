@@ -1,5 +1,5 @@
 #error
 printCountries invalid1.csv
+printCountries valid1.csv
 
 #success
-printCountries valid1.csv
