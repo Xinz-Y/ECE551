@@ -1,6 +1,7 @@
 #include "pandemic.h"
 
 #include <ctype.h>
+#include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -21,34 +22,35 @@ country_t parseLine(char * line) {
     exit(EXIT_FAILURE);
   }
   //check there is only one comma
-  if (strchr(line, ',') != strrchr(line, ',')) {
-    fprintf(stderr, "More than one comma\n ");
-    exit(EXIT_FAILURE);
-  }
-  //make sure there is sting before comma
+  // if (strchr(line, ',') != strrchr(line, ',')) {
+  // fprintf(stderr, "More than one comma\n ");
+  // exit(EXIT_FAILURE);
+  // }
+  // if there is no string before comma,accpet
   if (strchr(line, ',') == line) {
-    fprintf(stderr, "There is no country name");
-    exit(EXIT_FAILURE);
+    // Do nothing to the name
+    printf("The country name is %s\n", ans.name);
+    char * ptr_char2;
+    ans.population = (uint64_t)strtoll(line + 1, &ptr_char2, 10);
+    printf("Population is %" PRIu64 "\n", ans.population);
   }
-
-  // split the string
-  char * token = strtok(line, ",");
-  //check if the line exceed 64 chars
-  if (strlen(token) > 63) {
-    fprintf(stderr, "name is more than 64 bit");
-    exit(EXIT_FAILURE);
+  else {
+    // split the string
+    char * token = strtok(line, ",");
+    //check if the line exceed 64 chars
+    //if (strlen(token) > 63) {
+    //  fprintf(stderr, "name is more than 64 bit");
+    //  exit(EXIT_FAILURE);
+    //}
+    strncpy(ans.name, token, 64);
+    printf("The country name is %s\n", ans.name);
+    char * string_n = strtok(NULL, ",");
+    char * ptr_char;
+    long long pop;
+    pop = strtoll(string_n, &ptr_char, 10);
+    ans.population = (uint64_t)pop;
+    printf("Population is %" PRIu64 "\n", ans.population);
   }
-  strncpy(ans.name, token, 64);
-  // check if char-only
-  //while
-  printf("The country name is %s\n", ans.name);
-  char * string_n = strtok(NULL, ",");
-  char * ptr_char;
-  long pop;
-  pop = strtol(string_n, &ptr_char, 10);
-  ans.population = pop;
-  printf("Population is %d\n", (int)ans.population);
-
   return ans;
 }
 
