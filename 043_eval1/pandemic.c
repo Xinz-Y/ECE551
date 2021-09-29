@@ -57,7 +57,7 @@ country_t parseLine(char * line) {
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
   double sum = 0;
-  for (int i = 0; i < n_days; i++) {
+  for (size_t i = 0; i < n_days; i++) {
     sum += data[i];
   }
   *avg = sum / n_days;
@@ -65,6 +65,11 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
   //WRITE ME
+  double sum = 0;
+  for (uint i = 0; i < n_days; i++) {
+    sum += data[i];
+    cum[i] = sum / pop;
+  }
 }
 
 void printCountryWithMax(country_t * countries,
@@ -72,4 +77,26 @@ void printCountryWithMax(country_t * countries,
                          unsigned ** data,
                          size_t n_days) {
   //WRITE ME
+
+  for (size_t col = 0; col < n_days; col++) {
+    int tie = 0;
+    size_t row_max = 0;
+    for (size_t row = 1; row < n_countries; row++) {
+      if (data[row][col] > data[row_max][col]) {
+        row_max = row;
+        tie = 0;
+      }
+      else if (data[row][col] == data[row_max][col]) {
+        tie++;
+      }
+    }
+    if (tie > 0) {
+      printf("%s\n", "There is a tie between at least two countries");
+    }
+    else {
+      char * country_name = countries[row_max].name;
+      int number_cases = data[row_max][col];
+      printf("%s has the most daily cases with %u\n", country_name, number_cases);
+    }
+  }
 }
