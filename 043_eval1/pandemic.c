@@ -80,25 +80,53 @@ void printCountryWithMax(country_t * countries,
                          size_t n_days) {
   //WRITE ME
 
+  /* for (size_t col = 0; col < n_days; col++) { */
+  /*   int tie = 0; */
+  /*   size_t row_max = 0; */
+  /*   for (size_t row = 1; row < n_countries; row++) { */
+  /*     if (data[row][col] > data[row_max][col]) { */
+  /*       row_max = row; */
+  /*       tie = 0; */
+  /*     } */
+  /*     else if (data[row][col] == data[row_max][col]) { */
+  /*       tie++; */
+  /*     } */
+  /*   } */
+  /*   if (tie > 0) { */
+  /*     printf("%s\n", "There is a tie between at least two countries"); */
+  /*   } */
+  /*   else { */
+  /*     char * country_name = countries[row_max].name; */
+  /*     int number_cases = data[row_max][col]; */
+  /*     printf("%s has the most daily cases with %u\n", country_name, number_cases); */
+  /*   } */
+  /* } */
+
+  size_t period_max = 0;
+  uint64_t max = 0;
+  int tie = 0;
   for (size_t col = 0; col < n_days; col++) {
-    int tie = 0;
     size_t row_max = 0;
     for (size_t row = 1; row < n_countries; row++) {
       if (data[row][col] > data[row_max][col]) {
         row_max = row;
-        tie = 0;
-      }
-      else if (data[row][col] == data[row_max][col]) {
-        tie++;
       }
     }
-    if (tie > 0) {
-      printf("%s\n", "There is a tie between at least two countries");
+    if (data[row_max][col] > max) {
+      max = data[row_max][col];
+      period_max = row_max;
+      tie = 0;
     }
-    else {
-      char * country_name = countries[row_max].name;
-      int number_cases = data[row_max][col];
-      printf("%s has the most daily cases with %u\n", country_name, number_cases);
+    else if (data[row_max][col] == max) {
+      tie++;
     }
+  }
+  if (tie > 0) {
+    printf("%s\n", "There is a tie between at least two countries");
+  }
+  else {
+    char * country_name = countries[period_max].name;
+    int number_cases = max;
+    printf("%s has the most daily cases with %u\n", country_name, number_cases);
   }
 }
