@@ -1,6 +1,6 @@
-Grading at 09/29/2021:02:18:38.144522
-For commit ID 7fea34c26b11990772488b92b8dd98267f83c262
-Grading at Tue Sep 28 22:18:36 EDT 2021
+Grading at 09/29/2021:02:28:20.794230
+For commit ID 7b72a821b4a4bcbab18b250a2abcd461e3636bb0
+Grading at Tue Sep 28 22:28:17 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -10,10 +10,19 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o pri
 Test case printCountries invalid1.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
+Test case printCountries invalid2.csv
+Our printCountries does not consider this an error case
++-----------------------------------------------------------------------+
+Test case printCountries invalid3.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case printCountries invalid4.csv
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
 Test case printCountries valid1.csv
 Your file matched the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
