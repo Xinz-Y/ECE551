@@ -44,10 +44,10 @@ country_t parseLine(char * line) {
     //}
     strncpy(ans.name, token, 64);
     char * end = strchr(token, '\0');
-    printf("end's address is %p\n", end);
-    printf("start of token is at %p\n", token);
-    printf("This is should be the same as the line %p\n", line);
-    printf("The cha after end is %c\n", *(end + 1));
+    // printf("end's address is %p\n", end);
+    // printf("start of token is at %p\n", token);
+    // printf("This is should be the same as the line %p\n", line);
+    // printf("The cha after end is %c\n", *(end + 1));
 
     // check if the string after comma is empty
     if (*(end + 1) == '\0') {
