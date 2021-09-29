@@ -1,6 +1,7 @@
 #include "pandemic.h"
 
 #include <ctype.h>
+#include <errno.h>
 #include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,8 +27,20 @@ country_t parseLine(char * line) {
     }
     char * ptr_string;
     // return a unsigned long long type(max is 2^64 -1), and in decimal
-    ans.population = (uint64_t)strtoull(line + 1, &ptr_string, 10);
+    uint64_t population = (uint64_t)strtoull(line + 1, &ptr_string, 10);
+    //check if the population is no more than 2^64-1
+    if (errno != 0) {
+      perror("string to number errors");
+      exit(EXIT_FAILURE);
+    }
+    // check if the population start with non-number
+    ans.population = population;
   }
+
+  // check if the population lagrer than 2^64 -1
+  // *ptr_string='\0';
+  // char * pop_star;
+  // while(*(line +1 ))
   else {
     // if there is somthing before comma, then split the string by strtok function
     char * token = strtok(line, ",");
@@ -42,13 +55,18 @@ country_t parseLine(char * line) {
     //will return the second string and ignore the strings after
     char * string_n = strtok(NULL, ",");
     char * ptr_char;
-    long long pop;
-    pop = strtoull(string_n, &ptr_char, 10);
+    uint64_t pop;
+    pop = (uint64_t)strtoull(string_n, &ptr_char, 10);
     if (pop == 0) {
       fprintf(stderr, "No number in the population\n");
       exit(EXIT_FAILURE);
     }
-    ans.population = (uint64_t)pop;
+    if (errno != 0) {
+      perror("string to number errors");
+      exit(EXIT_FAILURE);
+    }
+
+    ans.population = pop;
     // printf("Population is %" PRIu64 "\n", ans.population);
   }
   return ans;
@@ -79,28 +97,6 @@ void printCountryWithMax(country_t * countries,
                          unsigned ** data,
                          size_t n_days) {
   //WRITE ME
-
-  /* for (size_t col = 0; col < n_days; col++) { */
-  /*   int tie = 0; */
-  /*   size_t row_max = 0; */
-  /*   for (size_t row = 1; row < n_countries; row++) { */
-  /*     if (data[row][col] > data[row_max][col]) { */
-  /*       row_max = row; */
-  /*       tie = 0; */
-  /*     } */
-  /*     else if (data[row][col] == data[row_max][col]) { */
-  /*       tie++; */
-  /*     } */
-  /*   } */
-  /*   if (tie > 0) { */
-  /*     printf("%s\n", "There is a tie between at least two countries"); */
-  /*   } */
-  /*   else { */
-  /*     char * country_name = countries[row_max].name; */
-  /*     int number_cases = data[row_max][col]; */
-  /*     printf("%s has the most daily cases with %u\n", country_name, number_cases); */
-  /*   } */
-  /* } */
 
   size_t period_max = 0;
   uint64_t max = 0;
