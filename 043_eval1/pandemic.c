@@ -26,7 +26,7 @@ country_t parseLine(char * line) {
   ans.name[0] = '\0';
   ans.population = 0;
   //check if the line is in the right format
-  //comma is inside
+  //check if comma is inside
   if (strchr(line, ',') == NULL) {
     fprintf(stderr, "No comma in your line\n");
     exit(EXIT_FAILURE);
