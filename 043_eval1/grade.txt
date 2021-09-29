@@ -1,6 +1,6 @@
-Grading at 09/29/2021:02:28:20.794230
-For commit ID 7b72a821b4a4bcbab18b250a2abcd461e3636bb0
-Grading at Tue Sep 28 22:28:17 EDT 2021
+Grading at 09/29/2021:02:32:12.102773
+For commit ID 10e3552a01121813bf460e4bec3c90a858f50e1e
+Grading at Tue Sep 28 22:32:08 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -11,7 +11,7 @@ Test case printCountries invalid1.csv
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid2.csv
-Our printCountries does not consider this an error case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries invalid3.csv
 Your program successfully indicated a failure case
@@ -21,8 +21,7 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case printCountries valid1.csv
 Your file matched the expected output
-
-You have FAILED one or more of your test cases
-Keep debugging
+Program must be one of printCountries printRunningAvg printCumulative printDailyMax
+But found "printcountries"
 
 Overall Grade: NO GRADE YET
