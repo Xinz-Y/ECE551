@@ -48,6 +48,10 @@ country_t parseLine(char * line) {
     char * ptr_char;
     long long pop;
     pop = strtoll(string_n, &ptr_char, 10);
+    if (pop == 0) {
+      fprintf(stderr, "No number in the population");
+      exit(EXIT_FAILURE);
+    }
     ans.population = (uint64_t)pop;
     // printf("Population is %" PRIu64 "\n", ans.population);
   }
