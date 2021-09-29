@@ -58,8 +58,8 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
   for (size_t i = 0; i < n_days - 6; i++) {
     double sum = 0;
-    for (size_t day = 0; day < 7; day++) {
-      sum += data[day + 7 * i];
+    for (size_t day = i; day < i + 6; day++) {
+      sum += data[day];
     }
     avg[i] = sum / 7;
   }
