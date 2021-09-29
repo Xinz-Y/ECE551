@@ -1,6 +1,6 @@
-Grading at 09/29/2021:15:28:16.395801
-For commit ID 6d2de8c096d7d55fb8d41267c58ce192ba61b3d8
-Grading at Wed Sep 29 11:28:09 EDT 2021
+Grading at 09/29/2021:15:57:51.481086
+For commit ID c3bb4850e575043efd0b382e886bdf704b887229
+Grading at Wed Sep 29 11:57:45 EDT 2021
 Running your test cases
 
 Compiling printCountries
@@ -36,7 +36,12 @@ rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
 +-----------------------------------------------------------------------+
 Test case printRunningAvg population.csv daily_small.csv
-Valgrind reported memory errors
+Line_4_did_not_match
+Line_6_did_not_match
+Line_8_did_not_match
+Line_14_did_not_match
+Line_18_did_not_match
+Your file did not match the expected output
 
 You have FAILED one or more of your test cases
 Keep debugging
