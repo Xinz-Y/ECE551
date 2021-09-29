@@ -11,10 +11,10 @@ country_t parseLine(char * line) {
   ans.name[0] = '\0';
   ans.population = 0;
   // check the line ends
-  if (strchr(line, '\n') == NULL) {
-    fprintf(stderr, "Line in the file is too long\n");
-    exit(EXIT_FAILURE);
-  }
+  // if (strchr(line, '\n') == NULL) {
+  //  fprintf(stderr, "Line in the file is too long\n");
+  //  exit(EXIT_FAILURE);
+  //}
   //check if the line is in the right format
   //comma is inside
   if (strchr(line, ',') == NULL) {
