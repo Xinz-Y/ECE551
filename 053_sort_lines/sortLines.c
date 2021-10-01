@@ -70,10 +70,6 @@ int main(int argc, char ** argv) {
           i++;
           line = NULL;
         }
-        if (getline(&line, &sz, f) < 0) {
-          perror("can't read line");
-          exit(EXIT_FAILURE);
-        }
         free(line);
         sortData(lines, i);
         for (size_t j = 0; j < i; j++) {
