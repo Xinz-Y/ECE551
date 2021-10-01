@@ -14,8 +14,63 @@ void sortData(char ** data, size_t count) {
   qsort(data, count, sizeof(char *), stringOrder);
 }
 
+//void print_sorted_lines ();
+
 int main(int argc, char ** argv) {
   //WRITE YOUR CODE HERE!
-
+  // read from the standard input
+  if (argc < 1) {
+    fprintf(stderr, "Usage:Wrong number of argv\n");
+    return EXIT_FAILURE;
+  }
+  else {
+    char ** lines = NULL;
+    char * line = NULL;
+    size_t sz = 0;
+    size_t i = 0;
+    if (argc == 1) {
+      //read from standard input
+      printf("Please enter a line:\n");
+      while (getline(&line, &sz, stdin) >= 0) {
+        lines = realloc(lines, (i + 1) * sizeof(*lines));
+        lines[i] = line;
+        i++;
+        line = NULL;
+      }
+      // lines store all the strings
+      sortData(lines, i);
+      for (size_t j = 0; j < i; j++) {
+        printf("%s\n", lines[j]);
+        free(lines[j]);
+      }
+      free(lines);
+    }
+    // read from the files
+    else {
+      for (int k = 0; k < argc - 1; k++) {
+        FILE * f = fopen(argv[k + 1], "r");
+        if (f == NULL) {
+          perror("Could not open file");
+          return EXIT_FAILURE;
+        }
+        lines = NULL;
+        line = NULL;
+        sz = 0;
+        i = 0;
+        while (getline(&line, &sz, f) >= 0) {
+          lines = realloc(lines, (i + 1) * sizeof(*lines));
+          lines[i] = line;
+          i++;
+          line = NULL;
+        }
+        sortData(lines, i);
+        for (size_t j = 0; j < i; j++) {
+          printf("%s\n", lines[j]);
+          free(lines[j]);
+        }
+        free(lines);
+      }
+    }
+  }
   return EXIT_SUCCESS;
 }
