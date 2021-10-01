@@ -1,105 +1,90 @@
-Grading at 10/01/2021:20:12:30.622905
-For commit ID 0714f9d318d95c932ea882ee65d8c139ca951412
-Grading at Fri Oct  1 16:12:25 EDT 2021
+Grading at 10/01/2021:20:35:09.071230
+For commit ID 3388b6f92849fa6c369f6d002a1cfacb234e7fdb
+Grading at Fri Oct  1 16:35:03 EDT 2021
 Attempting to compile sortLines.c
 #################################################
 testcase1:
 testcase1 passed, your program successfully indicated a failure
-  - Valgrind reported errors
+  - Valgrind showed memory leaks
 valgrind was not clean
-==130103== Memcheck, a memory error detector
-==130103== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==130103== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==130103== 
-==130103== Parent PID: 130102
-==130103== 
-==130103== 
-==130103== HEAP SUMMARY:
-==130103==     in use at exit: 672 bytes in 2 blocks
-==130103==   total heap usage: 15 allocs, 13 frees, 10,136 bytes allocated
-==130103== 
-==130103== 120 bytes in 1 blocks are definitely lost in loss record 1 of 2
-==130103==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==130103==    by 0x4EBBBFB: getdelim (iogetdelim.c:62)
-==130103==    by 0x108C15: main (in sortLines)
-==130103== 
-==130103== LEAK SUMMARY:
-==130103==    definitely lost: 120 bytes in 1 blocks
-==130103==    indirectly lost: 0 bytes in 0 blocks
-==130103==      possibly lost: 0 bytes in 0 blocks
-==130103==    still reachable: 552 bytes in 1 blocks
-==130103==         suppressed: 0 bytes in 0 blocks
-==130103== Reachable blocks (those to which a pointer was found) are not shown.
-==130103== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==130103== 
-==130103== For counts of detected and suppressed errors, rerun with: -v
-==130103== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==9682== Memcheck, a memory error detector
+==9682== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9682== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==9682== 
+==9682== Parent PID: 9681
+==9682== 
+==9682== 
+==9682== HEAP SUMMARY:
+==9682==     in use at exit: 552 bytes in 1 blocks
+==9682==   total heap usage: 15 allocs, 14 frees, 10,136 bytes allocated
+==9682== 
+==9682== LEAK SUMMARY:
+==9682==    definitely lost: 0 bytes in 0 blocks
+==9682==    indirectly lost: 0 bytes in 0 blocks
+==9682==      possibly lost: 0 bytes in 0 blocks
+==9682==    still reachable: 552 bytes in 1 blocks
+==9682==         suppressed: 0 bytes in 0 blocks
+==9682== Reachable blocks (those to which a pointer was found) are not shown.
+==9682== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==9682== 
+==9682== For counts of detected and suppressed errors, rerun with: -v
+==9682== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 #################################################
 testcase2:
 Your output is incorrect
 #################################################
 testcase3:
 Your output is correct
-  - Valgrind reported errors
+  - Valgrind showed memory leaks
 valgrind was not clean
-==130178== Memcheck, a memory error detector
-==130178== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==130178== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==130178== 
-==130178== Parent PID: 130177
-==130178== 
-==130178== 
-==130178== HEAP SUMMARY:
-==130178==     in use at exit: 672 bytes in 2 blocks
-==130178==   total heap usage: 14 allocs, 12 frees, 9,584 bytes allocated
-==130178== 
-==130178== 120 bytes in 1 blocks are definitely lost in loss record 1 of 2
-==130178==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==130178==    by 0x4EBBBFB: getdelim (iogetdelim.c:62)
-==130178==    by 0x108C15: main (in sortLines)
-==130178== 
-==130178== LEAK SUMMARY:
-==130178==    definitely lost: 120 bytes in 1 blocks
-==130178==    indirectly lost: 0 bytes in 0 blocks
-==130178==      possibly lost: 0 bytes in 0 blocks
-==130178==    still reachable: 552 bytes in 1 blocks
-==130178==         suppressed: 0 bytes in 0 blocks
-==130178== Reachable blocks (those to which a pointer was found) are not shown.
-==130178== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==130178== 
-==130178== For counts of detected and suppressed errors, rerun with: -v
-==130178== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==9712== Memcheck, a memory error detector
+==9712== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9712== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==9712== 
+==9712== Parent PID: 9711
+==9712== 
+==9712== 
+==9712== HEAP SUMMARY:
+==9712==     in use at exit: 552 bytes in 1 blocks
+==9712==   total heap usage: 14 allocs, 13 frees, 9,584 bytes allocated
+==9712== 
+==9712== LEAK SUMMARY:
+==9712==    definitely lost: 0 bytes in 0 blocks
+==9712==    indirectly lost: 0 bytes in 0 blocks
+==9712==      possibly lost: 0 bytes in 0 blocks
+==9712==    still reachable: 552 bytes in 1 blocks
+==9712==         suppressed: 0 bytes in 0 blocks
+==9712== Reachable blocks (those to which a pointer was found) are not shown.
+==9712== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==9712== 
+==9712== For counts of detected and suppressed errors, rerun with: -v
+==9712== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 #################################################
 testcase4:
 Your output is correct
-  - Valgrind reported errors
+  - Valgrind showed memory leaks
 valgrind was not clean
-==130211== Memcheck, a memory error detector
-==130211== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==130211== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==130211== 
-==130211== Parent PID: 130210
-==130211== 
-==130211== 
-==130211== HEAP SUMMARY:
-==130211==     in use at exit: 1,344 bytes in 4 blocks
-==130211==   total heap usage: 29 allocs, 25 frees, 15,240 bytes allocated
-==130211== 
-==130211== 240 bytes in 2 blocks are definitely lost in loss record 1 of 2
-==130211==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==130211==    by 0x4EBBBFB: getdelim (iogetdelim.c:62)
-==130211==    by 0x108C15: main (in sortLines)
-==130211== 
-==130211== LEAK SUMMARY:
-==130211==    definitely lost: 240 bytes in 2 blocks
-==130211==    indirectly lost: 0 bytes in 0 blocks
-==130211==      possibly lost: 0 bytes in 0 blocks
-==130211==    still reachable: 1,104 bytes in 2 blocks
-==130211==         suppressed: 0 bytes in 0 blocks
-==130211== Reachable blocks (those to which a pointer was found) are not shown.
-==130211== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==130211== 
-==130211== For counts of detected and suppressed errors, rerun with: -v
-==130211== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==9743== Memcheck, a memory error detector
+==9743== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9743== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==9743== 
+==9743== Parent PID: 9742
+==9743== 
+==9743== 
+==9743== HEAP SUMMARY:
+==9743==     in use at exit: 1,104 bytes in 2 blocks
+==9743==   total heap usage: 29 allocs, 27 frees, 15,240 bytes allocated
+==9743== 
+==9743== LEAK SUMMARY:
+==9743==    definitely lost: 0 bytes in 0 blocks
+==9743==    indirectly lost: 0 bytes in 0 blocks
+==9743==      possibly lost: 0 bytes in 0 blocks
+==9743==    still reachable: 1,104 bytes in 2 blocks
+==9743==         suppressed: 0 bytes in 0 blocks
+==9743== Reachable blocks (those to which a pointer was found) are not shown.
+==9743== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==9743== 
+==9743== For counts of detected and suppressed errors, rerun with: -v
+==9743== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
