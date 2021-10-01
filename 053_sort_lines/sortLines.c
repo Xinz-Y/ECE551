@@ -72,6 +72,10 @@ int main(int argc, char ** argv) {
           free(lines[j]);
         }
         free(lines);
+        if (fclose(f) != 0) {
+          perror("fail to close fire");
+          return EXIT_FAILURE;
+        }
       }
     }
   }
