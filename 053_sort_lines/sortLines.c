@@ -28,6 +28,7 @@ int main(int argc, char ** argv) {
     char * line = NULL;
     size_t sz = 0;
     size_t i = 0;
+
     if (argc == 1) {
       //read from standard input
       printf("Please enter a line:\n");
@@ -37,6 +38,7 @@ int main(int argc, char ** argv) {
         i++;
         line = NULL;
       }
+      free(line);
       // lines store all the strings
       sortData(lines, i);
       for (size_t j = 0; j < i; j++) {
@@ -45,6 +47,7 @@ int main(int argc, char ** argv) {
       }
       free(lines);
     }
+
     // read from the files
     else {
       for (int k = 0; k < argc - 1; k++) {
@@ -55,7 +58,6 @@ int main(int argc, char ** argv) {
         }
         lines = NULL;
         line = NULL;
-        sz = 0;
         i = 0;
         while (getline(&line, &sz, f) >= 0) {
           lines = realloc(lines, (i + 1) * sizeof(*lines));
@@ -63,6 +65,7 @@ int main(int argc, char ** argv) {
           i++;
           line = NULL;
         }
+        free(line);
         sortData(lines, i);
         for (size_t j = 0; j < i; j++) {
           printf("%s\n", lines[j]);
