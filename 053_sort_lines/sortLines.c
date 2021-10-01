@@ -46,6 +46,11 @@ int main(int argc, char ** argv) {
         free(lines[j]);
       }
       free(lines);
+
+      if (fclose(stdin) != 0) {
+        fprintf(stderr, "failed to close input\n");
+        exit(EXIT_FAILURE);
+      }
     }
 
     // read from the files
@@ -72,6 +77,7 @@ int main(int argc, char ** argv) {
           free(lines[j]);
         }
         free(lines);
+
         if (fclose(f) != 0) {
           perror("fail to close fire");
           return EXIT_FAILURE;
