@@ -61,7 +61,7 @@ int main(int argc, char ** argv) {
         FILE * f = fopen(argv[k + 1], "r");
         if (f == NULL) {
           perror("Could not open file");
-          exit(EXIT_FAILURE);
+          return EXIT_FAILURE;
         }
         lines = NULL;
         line = NULL;
