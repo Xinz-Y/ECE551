@@ -1,6 +1,6 @@
-Grading at 10/02/2021:06:06:59.199764
-For commit ID e42e2d18a0e4130c786d7efe6b3aabb229ff26e4
-Grading at Sat Oct  2 02:06:53 EDT 2021
+Grading at 10/02/2021:06:20:55.828393
+For commit ID c328256b4f08ec7a4c7e5e00248b2412e1d3b78d
+Grading at Sat Oct  2 02:20:50 EDT 2021
 Attempting to compile sortLines.c
 #################################################
 testcase1:
@@ -12,13 +12,9 @@ testcase2:
 Your output is incorrect
 #################################################
 testcase3:
-Your output is correct
-  - Valgrind was clean (no errors, no memory leaks)
-valgrind was clean
+Your output is incorrect
 #################################################
 testcase4:
-Your output is correct
-  - Valgrind was clean (no errors, no memory leaks)
-valgrind was clean
+Your output is incorrect
 
-Overall Grade: C
+Overall Grade: F
