@@ -46,7 +46,7 @@ int main(int argc, char ** argv) {
       sortData(lines, i);
       // printf("\n");
       for (size_t j = 0; j < i; j++) {
-        // printf("%s", lines[j]);
+        printf("%s", lines[j]);
         free(lines[j]);
       }
       free(lines);
@@ -81,7 +81,7 @@ int main(int argc, char ** argv) {
         free(line);
         sortData(lines, i);
         for (size_t j = 0; j < i; j++) {
-          //printf("%s", lines[j]);
+          printf("%s", lines[j]);
           free(lines[j]);
         }
         free(lines);
