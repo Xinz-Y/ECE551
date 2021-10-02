@@ -1,3 +1,4 @@
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -49,7 +50,7 @@ int main(int argc, char ** argv) {
 
       if (fclose(stdin) != 0) {
         fprintf(stderr, "failed to close input\n");
-        exit(EXIT_FAILURE);
+        return EXIT_FAILURE;
       }
     }
 
@@ -59,7 +60,7 @@ int main(int argc, char ** argv) {
         FILE * f = fopen(argv[k + 1], "r");
         if (f == NULL) {
           perror("Could not open file");
-          return EXIT_FAILURE;
+          exit(EXIT_FAILURE);
         }
         lines = NULL;
         line = NULL;
@@ -69,6 +70,10 @@ int main(int argc, char ** argv) {
           lines[i] = line;
           i++;
           line = NULL;
+        }
+        if (errno != 0) {
+          perror("Could not read line");
+          return EXIT_FAILURE;
         }
         free(line);
         sortData(lines, i);
