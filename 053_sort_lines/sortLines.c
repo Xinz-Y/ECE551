@@ -43,7 +43,7 @@ int main(int argc, char ** argv) {
       // lines store all the strings
       sortData(lines, i);
       for (size_t j = 0; j < i; j++) {
-        printf("%s", lines[j]);
+        printf("\n%s", lines[j]);
         free(lines[j]);
       }
       free(lines);
@@ -84,7 +84,7 @@ int main(int argc, char ** argv) {
         free(lines);
 
         if (fclose(f) != 0) {
-          perror("fail to close fire");
+          perror("fail to close file");
           return EXIT_FAILURE;
         }
       }
