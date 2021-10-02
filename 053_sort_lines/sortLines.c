@@ -40,6 +40,8 @@ int main(int argc, char ** argv) {
         line = NULL;
       }
       free(line);
+      char n = '\n';
+      strncat(lines[i - 1], &n, 1);
       // lines store all the strings
       sortData(lines, i);
       printf("\n");
