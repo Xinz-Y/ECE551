@@ -42,8 +42,9 @@ int main(int argc, char ** argv) {
       free(line);
       // lines store all the strings
       sortData(lines, i);
+      printf("\n");
       for (size_t j = 0; j < i; j++) {
-        printf("\n%s", lines[j]);
+        printf("%s\n", lines[j]);
         free(lines[j]);
       }
       free(lines);
