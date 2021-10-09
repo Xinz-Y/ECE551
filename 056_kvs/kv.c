@@ -31,6 +31,7 @@ kvarray_t * readKVs(const char * fname) {
   size_t sz;
   size_t i = 0;
   kvarray_t * readkvs = malloc(sizeof(*readkvs));
+  readkvs->kvarray = NULL;
   while (getline(&line, &sz, f) >= 0) {
     char * delimiter = strchr(line, '=');
     //no delimiter
