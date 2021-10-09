@@ -19,18 +19,21 @@ void addCount(counts_t * c, const char * name) {
   }
   else {
     // if name is not in the string_arr then create a one_count struct
+    int isfind = 0;
     for (size_t i = 0; i < c->n; i++) {
       if (strcmp(c->string_arr[i].string, name) == 0) {
         c->string_arr[i].count++;
+        isfind = 1;
         break;
       }
     }
-
-    c->n++;
-    c->string_arr = realloc(c->string_arr, (c->n) * sizeof(*(c->string_arr)));
-    c->string_arr[(c->n) - 1].string = malloc((strlen(name) + 1) * sizeof(char));
-    strcpy(c->string_arr[(c->n) - 1].string, name);
-    c->string_arr[(c->n) - 1].count = 1;
+    if (isfind == 0) {
+      c->n++;
+      c->string_arr = realloc(c->string_arr, (c->n) * sizeof(*(c->string_arr)));
+      c->string_arr[(c->n) - 1].string = malloc((strlen(name) + 1) * sizeof(char));
+      strcpy(c->string_arr[(c->n) - 1].string, name);
+      c->string_arr[(c->n) - 1].count = 1;
+    }
   }
 }
 
