@@ -24,14 +24,13 @@ void addCount(counts_t * c, const char * name) {
         c->string_arr[i].count++;
         break;
       }
-      else {
-        c->n++;
-        c->string_arr = realloc(c->string_arr, (c->n) * sizeof(*(c->string_arr)));
-        c->string_arr[(c->n) - 1].string = malloc((strlen(name) + 1) * sizeof(char));
-        strcpy(c->string_arr[(c->n) - 1].string, name);
-        c->string_arr[(c->n) - 1].count = 1;
-      }
     }
+
+    c->n++;
+    c->string_arr = realloc(c->string_arr, (c->n) * sizeof(*(c->string_arr)));
+    c->string_arr[(c->n) - 1].string = malloc((strlen(name) + 1) * sizeof(char));
+    strcpy(c->string_arr[(c->n) - 1].string, name);
+    c->string_arr[(c->n) - 1].count = 1;
   }
 }
 
