@@ -18,10 +18,18 @@ void addCount(counts_t * c, const char * name) {
     c->count_unk++;
   }
   else {
+    // if name is not in the string_arr then create a one_count struct
     for (size_t i = 0; i < c->n; i++) {
       if (strcmp(c->string_arr[i].string, name) == 0) {
         c->string_arr[i].count++;
         break;
+      }
+      else {
+        c->n++;
+        c->string_arr = realloc(c->string_arr, (c->n) * sizeof(*(c->string_arr)));
+        c->string_arr[(c->n) - 1].string = malloc((strlen(name) + 1) * sizeof(char));
+        strcpy(c->string_arr[(c->n) - 1].string, name);
+        c->string_arr[(c->n) - 1].count = 1;
       }
     }
   }
@@ -33,8 +41,9 @@ void printCounts(counts_t * c, FILE * outFile) {
     perror("The file can not be written");
     exit(EXIT_FAILURE);
   }
-
+  // fprintf(outFile, "%d\n", (int)c->n);
   for (size_t i = 0; i < c->n; i++) {
+    // fprintf(outFile, "Checking");
     fprintf(outFile, "%s: %d\n", c->string_arr[i].string, c->string_arr[i].count);
   }
   if (c->count_unk != 0) {
