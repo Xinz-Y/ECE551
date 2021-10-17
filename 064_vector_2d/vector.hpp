@@ -10,10 +10,8 @@ class Vector2D {
   double y;
 
  public:
-  void initVector(double init_x, double init_y) {
-    x = init_x;
-    y = init_y;
-  }
+  Vector2D() : x(0), y(0){};
+  Vector2D(double a, double b) : x(a), y(b){};
   double getMagnitude() const {
     double answer = sqrt(x * x + y * y);
     return answer;
