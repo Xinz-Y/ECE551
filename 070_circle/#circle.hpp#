@@ -7,6 +7,6 @@ class Circle {
 
  public:
   Circle(Point point, double r) : center(point), radius(r){};
-  void move(double dx, double dy);
+  void move(double dx, double dy) { center.move(dx, dy); }
   double intersectionArea(const Circle & otherCircle);
 };
