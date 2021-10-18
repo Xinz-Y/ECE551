@@ -74,7 +74,7 @@ void step1(FILE * f) {
       ptr++;
     }
     if (num % 2 != 0) {
-      printf("The second '_' is missing\n");
+      fprintf(stderr, "The second '_' is missing\n");
       exit(EXIT_FAILURE);
     }
     lines = realloc(lines, (n + 1) * sizeof(*lines));
