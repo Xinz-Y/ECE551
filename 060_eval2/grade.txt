@@ -1,6 +1,6 @@
-Grading at 10/18/2021:21:40:32.519333
-For commit ID 8668e8d4433257c3b3444d0b25fa878236ecb649
-Grading at Mon Oct 18 17:40:31 EDT 2021
+Grading at 10/18/2021:21:47:37.249492
+For commit ID 421cf53efbea246d42d30d9c1d6143929ea4a10a
+Grading at Mon Oct 18 17:47:35 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -11,16 +11,12 @@ gcc -o story-step1 story-step1.o rand_story.o provided.o
 rm story-step1.o
 +-----------------------------------------------------------------------+
 Test case story-step1 invalid.txt
-Our story-step1 does not consider this an error case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step1 valid.txt
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
