@@ -35,17 +35,9 @@ void changeWord(char ** line, size_t n, char * start, char * end, catarray_t * c
   }
   // realloc a new line
   char * newLine = malloc(newNum * sizeof(*newLine));
-  // char * ptr = *line;
-  //int i = 0;
-  /* while (ptr_inside < start) { */
-  /*   newLine[i] = (*line)[i]; */
-  /*   i++; */
-  /*   ptr_inside++; */
-  /* } */
   *start = '\0';
   char * string1 = *line;
   strcpy(newLine, string1);
-  // newLine[i + 1] = '\0';
   strcat(newLine, word);
   size_t backlen = strlen(end + 1);
   strncat(newLine, end + 1, backlen + 1);
