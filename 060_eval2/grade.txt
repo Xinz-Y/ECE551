@@ -1,6 +1,6 @@
-Grading at 10/18/2021:21:47:37.249492
-For commit ID 421cf53efbea246d42d30d9c1d6143929ea4a10a
-Grading at Mon Oct 18 17:47:35 EDT 2021
+Grading at 10/18/2021:21:50:30.426642
+For commit ID 4b349f06cb45ff1d8f178b368f088318d851bea3
+Grading at Mon Oct 18 17:50:27 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -10,13 +10,20 @@ gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
 gcc -o story-step1 story-step1.o rand_story.o provided.o
 rm story-step1.o
 +-----------------------------------------------------------------------+
-Test case story-step1 invalid.txt
+Test case story-step1 invalid_nofile.txt
 Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step1 invalid_odd_.txt
+The second '_' is missing
+Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
 Test case story-step1 valid.txt
 Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step1 valid2.txt
+Your file matched the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
