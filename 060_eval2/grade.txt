@@ -1,6 +1,6 @@
-Grading at 10/18/2021:21:50:30.426642
-For commit ID 4b349f06cb45ff1d8f178b368f088318d851bea3
-Grading at Mon Oct 18 17:50:27 EDT 2021
+Grading at 10/18/2021:21:53:37.115762
+For commit ID d16b61c0942a7729f78ed63664358dfa4f2ec960
+Grading at Mon Oct 18 17:53:34 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -14,8 +14,7 @@ Test case story-step1 invalid_nofile.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step1 invalid_odd_.txt
-The second '_' is missing
-Your program did not indicate a failure case
+Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step1 valid.txt
 Your file matched the expected output
@@ -23,7 +22,7 @@ Your file matched the expected output
 Test case story-step1 valid2.txt
 Your file matched the expected output
 
-You have FAILED one or more of your test cases
-Keep debugging
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
