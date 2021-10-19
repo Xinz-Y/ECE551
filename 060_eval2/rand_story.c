@@ -86,7 +86,17 @@ lines_t * getNewLines(FILE * f) {
   newLines->lines = lines;
   newLines->n_row = n;
   return newLines;
-} /*
+}
+
+void freeNewLines(lines_t * lines) {
+  for (size_t i = 0; i < lines->n_row; i++) {
+    free(lines->lines[i]);
+  }
+  free(lines->lines);
+  free(lines);
+}
+
+/*
   for (size_t i = 0; i < n; i++) {
     printf("%s\n", lines[i]);
     free(lines[i]);

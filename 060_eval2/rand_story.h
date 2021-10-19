@@ -17,6 +17,7 @@ typedef struct lines_tag lines_t;
 FILE * openfile(char * filename);
 void changeWord(char ** line, size_t n, char * start, char * end, catarray_t * cats);
 lines_t * getNewLines(FILE * f);
+void freeNewLines(lines_t * lines);
 void closefile(FILE * f);
 
 //function written in step2

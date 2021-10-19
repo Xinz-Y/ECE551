@@ -13,10 +13,8 @@ int main(int argc, char ** argv) {
   lines_t * newLines = getNewLines(f);
   for (size_t i = 0; i < newLines->n_row; i++) {
     printf("%s\n", newLines->lines[i]);
-    free(newLines->lines[i]);
   }
-  free(newLines->lines);
-  free(newLines);
+  freeNewLines(newLines);
   closefile(f);
   return EXIT_SUCCESS;
 }
