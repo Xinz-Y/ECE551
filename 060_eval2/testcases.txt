@@ -2,6 +2,8 @@
 story-step1 invalid_nofile.txt
 story-step1 invalid_odd_.txt
 story-step2 invalid_nocolon.txt
+story-step3 words.txt
+story-step3 story2.txt words.txt
 
 #success
 story-step1 valid.txt
@@ -9,3 +11,5 @@ story-step1 valid2.txt
 story-step1 story.txt
 story-step1 story2.txt
 story-step2 words.txt
+story-step3 words.txt story2.txt
+story-step3 words.txt story2.txt
