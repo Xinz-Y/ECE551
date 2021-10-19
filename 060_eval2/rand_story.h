@@ -6,10 +6,17 @@
 #include <string.h>
 
 #include "provided.h"
+
+struct lines_tag {
+  char ** lines;
+  size_t n_row;
+};
+typedef struct lines_tag lines_t;
+
 //any functions you want your main to use
 FILE * openfile(char * filename);
 void changeWord(char ** line, size_t n, char * start, char * end, catarray_t * cats);
-void step1(FILE * f);
+lines_t * getNewLines(FILE * f);
 void closefile(FILE * f);
 
 //function written in step2

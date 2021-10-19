@@ -11,7 +11,6 @@ FILE * openfile(char * filename) {
   }
   return f;
 }
-
 void closefile(FILE * f) {
   if (fclose(f) != 0) {
     perror("fail to close fire");
@@ -46,7 +45,7 @@ void changeWord(char ** line, size_t n, char * start, char * end, catarray_t * c
   free(cataName);
 }
 
-void step1(FILE * f) {
+lines_t * getNewLines(FILE * f) {
   char * line = NULL;
   char ** lines = NULL;
   size_t sz = 0;
@@ -83,12 +82,17 @@ void step1(FILE * f) {
     n++;
   }
   free(line);
+  lines_t * newLines = malloc(sizeof(*newLines));
+  newLines->lines = lines;
+  newLines->n_row = n;
+  return newLines;
+} /*
   for (size_t i = 0; i < n; i++) {
     printf("%s\n", lines[i]);
     free(lines[i]);
   }
   free(lines);
-}
+  }*/
 
 // do step2
 catarray_t * createCataArr(void) {
