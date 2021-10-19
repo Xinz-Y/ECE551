@@ -111,7 +111,7 @@ void freeCataArr(catarray_t * pcataArr) {
 }
 
 int checkExist(char * cataName, catarray_t * cataArr) {
-  int isExist = 0;
+  int isExist = -1;
   for (size_t i = 0; i < cataArr->n; i++) {
     if (strcmp(cataName, (cataArr->arr)[i].name) == 0) {
       isExist = i;
@@ -123,7 +123,7 @@ int checkExist(char * cataName, catarray_t * cataArr) {
 
 void addWord(char * cataName, char * word, catarray_t * cataArr) {
   int isExist = checkExist(cataName, cataArr);
-  if (isExist != 0) {
+  if (isExist != -1) {
     //free cataName
     free(cataName);
     int i = isExist;
@@ -144,50 +144,17 @@ void addWord(char * cataName, char * word, catarray_t * cataArr) {
   }
 }
 
-/* void addWord2(char * cataName, char * word, catarray_t * cataArr) { */
-/*   if (cataArr->n == 0) { */
-/*     cataArr->arr = realloc(cataArr->arr, ((cataArr->n) + 1) * sizeof(*(cataArr->arr))); */
-/*     cataArr->arr[cataArr->n].name = cataName; */
-/*     cataArr->arr[cataArr->n].words = NULL; */
-/*     cataArr->arr[cataArr->n].words = malloc(sizeof(*cataArr->arr[cataArr->n].words)); */
-/*     cataArr->arr[cataArr->n].words[0] = word; */
-/*     cataArr->arr[cataArr->n].n_words = 1; */
-/*     cataArr->n++; */
-/*   } */
-/*   for (size_t i = 0; i < cataArr->n; i++) { */
-/*     if (strcmp(cataName, (cataArr->arr)[i].name) == 0) { */
-/*       (cataArr->arr)[i].words = */
-/*           realloc((cataArr->arr)[i].words, */
-/*                   ((cataArr->arr)[i].n_words + 1) * sizeof(*((cataArr->arr)[i]).words)); */
-/*       (cataArr->arr)[i].words[(cataArr->arr)[i].n_words] = word; */
-/*       (cataArr->arr)[i].n_words++; */
-/*       break; */
-/*     } */
-/*     else { */
-/*       // add a new catagory_t */
-/*       cataArr->arr = realloc(cataArr->arr, ((cataArr->n) + 1) * sizeof(*(cataArr->arr))); */
-/*       cataArr->arr[cataArr->n].name = cataName; */
-/*       cataArr->arr[cataArr->n].words = NULL; */
-/*       cataArr->arr[cataArr->n].words = malloc(sizeof(*cataArr->arr[cataArr->n].words)); */
-/*       cataArr->arr[cataArr->n].words[0] = word; */
-/*       cataArr->arr[cataArr->n].n_words = 1; */
-/*       cataArr->n++; */
-/*     } */
-/*   } */
-/* } */
-
 /* void freeLines(char *** lines, size_t n) { */
 /*   for (size_t i = 0; i < n; i++) { */
 /*     free((*lines)[i]); */
 /*   } */
 /*   free(*lines); */
 /* } */
-/*
-void deln (char * word){
+
+void deln(char * word) {
   size_t len = strlen(word);
-  word[len-1] = '\0';
-  
-  }*/
+  word[len - 1] = '\0';
+}
 catarray_t * getCataArr(FILE * f) {
   char * line = NULL;
   // to store the pointers of line for later free
@@ -206,6 +173,7 @@ catarray_t * getCataArr(FILE * f) {
     cataName = strdup(line);
     if (*(ptr + 1) != '\0') {
       word = strdup(ptr + 1);
+      deln(word);
     }
 
     addWord(cataName, word, pcataArr);
