@@ -1,6 +1,6 @@
-Grading at 10/19/2021:02:22:40.728027
-For commit ID b5c87f59ca5e63f334a7c35fd44a929f99a24fa4
-Grading at Mon Oct 18 22:22:35 EDT 2021
+Grading at 10/19/2021:02:25:47.535292
+For commit ID fcea4e7676656b61a798e44973edcb3e4425db3e
+Grading at Mon Oct 18 22:25:41 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -15,6 +15,23 @@ Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
 Test case story-step1 invalid_odd_.txt
 Your program successfully indicated a failure case
+
+Compiling story-step2
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step2.c
+gcc -o story-step2 story-step2.o rand_story.o provided.o
+rm story-step2.o
++-----------------------------------------------------------------------+
+Test case story-step2 invalid_nocolon.txt
+Your program successfully indicated a failure case
+
+Compiling story-step1
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step1.c
+gcc -o story-step1 story-step1.o rand_story.o provided.o
+rm story-step1.o
 +-----------------------------------------------------------------------+
 Test case story-step1 valid.txt
 Your file matched the expected output
