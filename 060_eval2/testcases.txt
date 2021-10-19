@@ -6,3 +6,6 @@ story-step1 invalid_odd_.txt
 #success
 story-step1 valid.txt
 story-step1 valid2.txt
+story-step1 story.txt
+story-step1 story2.txt
+story-step2 words.txt
