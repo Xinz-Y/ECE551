@@ -1,7 +1,7 @@
 #error
 story-step1 invalid_nofile.txt
 story-step1 invalid_odd_.txt
-
+story-step2 invalid_nocolon.txt
 
 #success
 story-step1 valid.txt
