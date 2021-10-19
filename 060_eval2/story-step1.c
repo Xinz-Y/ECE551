@@ -10,7 +10,7 @@ int main(int argc, char ** argv) {
   }
   FILE * f = openfile(argv[1]);
   //FILE * f = openfile("story.txt");
-  lines_t * newLines = getNewLines(f);
+  lines_t * newLines = getNewLines(f, NULL, NULL);
   for (size_t i = 0; i < newLines->n_row; i++) {
     printf("%s\n", newLines->lines[i]);
   }
