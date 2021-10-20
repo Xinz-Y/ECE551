@@ -8,6 +8,7 @@ story-step3 story2.txt invalid_index.txt
 story-step4 -n words.txt
 story-step4 words.txt story2.txt -n
 story-step4 -n lessWords.txt story2.txt
+story-step4 -n words.txt valid_123a.txt
 
 #success
 story-step1 valid.txt
@@ -20,3 +21,4 @@ story-step3 words.txt story2.txt
 story-step4 words.txt story2.txt
 story-step4 -n words.txt story2.txt
 story-step4 -n words.txt story.txt
+story-step4 -n words_123a.txt valid_123a.txt 

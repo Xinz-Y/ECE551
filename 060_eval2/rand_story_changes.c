@@ -1,8 +1,8 @@
-#include "rand_story.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "rand_story.h"
 FILE * openfile(char * filename) {
   FILE * f = fopen(filename, "r");
   if (f == NULL) {
@@ -43,9 +43,10 @@ void changeWord(char ** line,
     //match the catName with word
     char * ptr = NULL;
     int isNumber = strtol(cataName, &ptr, 10);
-    if ((isNumber == 0) | (*ptr != 0)) {
+    if (isNumber == 0 | *ptr != 0) {
       // This mean cataName is not a number, we choose word from cataArr
       // check whether this is a valid cataName,i.e. exists in the cataArr
+      printf("%s\n", "This is not a number");
       if (checkExist(cataName, cats) == -1) {
         fprintf(stderr, "Wrong catagory!--Does not eixt in the cataArray!\n");
         exit(EXIT_FAILURE);

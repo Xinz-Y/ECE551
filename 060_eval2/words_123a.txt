@@ -1,0 +1,3 @@
+animal:cat
+animal:dog
+123a:123a

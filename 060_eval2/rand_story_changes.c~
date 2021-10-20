@@ -41,9 +41,7 @@ void changeWord(char ** line,
   else {
     //in case of stpe3,step4
     //match the catName with word
-    char * ptr = NULL;
-    int isNumber = strtol(cataName, &ptr, 10);
-    if ((isNumber == 0) | (*ptr != 0)) {
+    if (atoi(cataName) == 0) {
       // This mean cataName is not a number, we choose word from cataArr
       // check whether this is a valid cataName,i.e. exists in the cataArr
       if (checkExist(cataName, cats) == -1) {
