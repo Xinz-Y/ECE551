@@ -5,3 +5,4 @@ adjective:peculiar
 adjective:scary
 adjective:peaceful
 animal:cat
+:empty
