@@ -1,6 +1,6 @@
-Grading at 10/20/2021:05:22:45.299694
-For commit ID e63bd21da5359e164c52de8e2e75ed5948d3c5e3
-Grading at Wed Oct 20 01:22:32 EDT 2021
+Grading at 10/20/2021:05:45:55.502141
+For commit ID d4cdff861f964e68a920dc860dbc952f4925b9b2
+Grading at Wed Oct 20 01:45:40 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -39,10 +39,23 @@ Your program successfully indicated a failure case
 Test case story-step3 story2.txt words.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step3 -n words.txt
+Test case story-step3 story2.txt invalid_index.txt
+Your program successfully indicated a failure case
+
+Compiling story-step4
+rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
+gcc -o story-step4 story-step4.o rand_story.o provided.o
+rm story-step4.o
++-----------------------------------------------------------------------+
+Test case story-step4 -n words.txt
 Your program successfully indicated a failure case
 +-----------------------------------------------------------------------+
-Test case story-step3 words.txt story2.txt -n
+Test case story-step4 words.txt story2.txt -n
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case story-step4 -n lessWords.txt story2.txt
 Your program successfully indicated a failure case
 
 Compiling story-step1
@@ -98,6 +111,9 @@ Test case story-step4 words.txt story2.txt
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case story-step4 -n words.txt story2.txt
+Your file matched the expected output
++-----------------------------------------------------------------------+
+Test case story-step4 -n words.txt story.txt
 Your file matched the expected output
 
 You have PASSED all of your test cases
