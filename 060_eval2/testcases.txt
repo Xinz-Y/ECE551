@@ -4,7 +4,7 @@ story-step1 invalid_odd_.txt
 story-step2 invalid_nocolon.txt
 story-step3 words.txt
 story-step3 story2.txt words.txt
-story-stpe3 -n words.txt
+story-step3 -n words.txt
 story-step3 words.txt story2.txt -n
 
 
@@ -17,4 +17,4 @@ story-step2 words.txt
 story-step3 words.txt story2.txt
 story-step3 words.txt story2.txt
 story-step4 words.txt story2.txt
-story-stpe4 -n words.txt story2.txt
+story-step4 -n words.txt story2.txt
