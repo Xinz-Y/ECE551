@@ -17,27 +17,42 @@ void closefile(FILE * f) {
     exit(EXIT_FAILURE);
   }
 }
-//make some changes s.t. adding an argument that save the word shown
+//make some changes for step3, s.t. adding an argument that save the word shown
+// make new change for step4, s.t. if isReuse is 0, then update the cats to a new cats
 
 void changeWord(char ** line,
                 size_t n,
                 char * start,
                 char * end,
                 catarray_t * cats,
-                wordsArr_t * wordsArr) {
+                wordsArr_t * wordsArr,
+                int isReuse) {
   // get the catagoty name
   size_t len = end - start - 1;
   char * cataName = strndup(start + 1, len);
+  // in case of step1
   // if wordsArr is NULL , do not need to read from wordsArr and add shown cataName to wordsArr
   const char * word;
   if (wordsArr == NULL) {
     word = chooseWord(cataName, cats);
+    if (isReuse == 1) {
+      updateCataArr(cats, word, cataName);
+    }
   }
   else {
+    //in case of stpe3,step4
     //match the catName with word
     if (atoi(cataName) == 0) {
       // This mean cataName is not a number, we choose word from cataArr
+      // check whether this is a valid cataName,i.e. exists in the cataArr
+      if (checkExist(cataName, cats) == -1) {
+        fprintf(stderr, "Wrong catagory!--Does not eixt in the cataArray!\n");
+        exit(EXIT_FAILURE);
+      }
       word = chooseWord(cataName, cats);
+      if (isReuse == 1) {
+        updateCataArr(cats, word, cataName);
+      }
     }
     else {
       // read from the wordsArr
@@ -73,12 +88,38 @@ void changeWord(char ** line,
   free(cataName);
 }
 
-/* void changeWord(char ** line, size_t n, char * start, char * end, catarray_t * cats) { */
+/* void changeWord2(char ** line, */
+/*                 size_t n, */
+/*                 char * start, */
+/*                 char * end, */
+/*                 catarray_t * cats, */
+/*                 wordsArr_t * wordsArr) { */
 /*   // get the catagoty name */
-/*   size_t len = end - start + 1; */
-/*   char * cataName = strndup(start, len); */
-/*   //match the catName with word */
-/*   const char * word = chooseWord(cataName, cats); */
+/*   size_t len = end - start - 1; */
+/*   char * cataName = strndup(start + 1, len); */
+/*   // if wordsArr is NULL , do not need to read from wordsArr and add shown cataName to wordsArr */
+/*   const char * word; */
+/*   if (wordsArr == NULL) { */
+/*     word = chooseWord(cataName, cats); */
+/*   } */
+/*   else { */
+/*     //match the catName with word */
+/*     if (atoi(cataName) == 0) { */
+/*       // This mean cataName is not a number, we choose word from cataArr */
+/*       word = chooseWord(cataName, cats); */
+/*     } */
+/*     else { */
+/*       // read from the wordsArr */
+/*       int num = atoi(cataName); */
+/*       if ((num < 1) | (num > (int)wordsArr->n_words)) { */
+/*         fprintf(stderr, "Wrong index!\n"); */
+/*         exit(EXIT_FAILURE); */
+/*       } */
+/*       word = wordsArr->words[wordsArr->n_words - num]; */
+/*     } */
+/*     // save the word to wordsArr */
+/*     addWord2Arr(word, wordsArr); */
+/*   } */
 /*   size_t newNum; */
 /*   // compute the length of the new line */
 /*   if (strlen(cataName) < strlen(word)) { */
@@ -88,7 +129,8 @@ void changeWord(char ** line,
 /*     newNum = n; */
 /*   } */
 /*   // realloc a new line */
-/*   char * newLine = malloc(newNum * sizeof(*newLine)); */
+/*   char * newLine = NULL; */
+/*   newLine = malloc(newNum * sizeof(*newLine)); */
 /*   *start = '\0'; */
 /*   char * string1 = *line; */
 /*   strcpy(newLine, string1); */
@@ -97,12 +139,15 @@ void changeWord(char ** line,
 /*   strncat(newLine, end + 1, backlen + 1); */
 /*   free(*line); */
 /*   *line = newLine; */
-/*   // newLine = NULL; */
 /*   free(cataName); */
 /* } */
 
-// change get new line in stpe3
-lines_t * getNewLines(FILE * f, catarray_t * pcataArr, wordsArr_t * wordsArr) {
+// change arguments to  get newlines in stpe3;for step1 pcataArr and wordsArr both are NULL
+// change argumen to no reuse in step3; for step3 isReuse is 0;
+lines_t * getNewLines(FILE * f,
+                      catarray_t * pcataArr,
+                      wordsArr_t * wordsArr,
+                      int isReuse) {
   char * line = NULL;
   char ** lines = NULL;
   size_t sz = 0;
@@ -122,7 +167,7 @@ lines_t * getNewLines(FILE * f, catarray_t * pcataArr, wordsArr_t * wordsArr) {
         else {
           end = ptr;
           isfirst = 0;
-          changeWord(&line, sz, start, end, pcataArr, wordsArr);
+          changeWord(&line, sz, start, end, pcataArr, wordsArr, isReuse);
           ptr = line;
         }
         num++;
@@ -145,49 +190,6 @@ lines_t * getNewLines(FILE * f, catarray_t * pcataArr, wordsArr_t * wordsArr) {
   return newLines;
 }
 
-/* lines_t * getNewLines(FILE * f, catarray_t * pcataArr, wordsArr_t * wordsArr) { */
-/*   char * line = NULL; */
-/*   char ** lines = NULL; */
-/*   size_t sz = 0; */
-/*   size_t n = 0; */
-/*   while (getline(&line, &sz, f) >= 0) { */
-/*     char * ptr = line; */
-/*     char * start = NULL; */
-/*     char * end = NULL; */
-/*     int num = 0; */
-/*     int isfirst = 0; */
-/*     while (*ptr != '\0') { */
-/*       if (*ptr == '_') { */
-/*         if (isfirst == 0) { */
-/*           start = ptr; */
-/*           isfirst = 1; */
-/*         } */
-/*         else { */
-/*           end = ptr; */
-/*           isfirst = 0; */
-/*           changeWord(&line, sz, start, end, pcataArr, wordsArr); */
-/*           ptr = line; */
-/*         } */
-/*         num++; */
-/*       } */
-/*       ptr++; */
-/*     } */
-/*     if (num % 2 != 0) { */
-/*       fprintf(stderr, "The second '_' is missing\n"); */
-/*       exit(EXIT_FAILURE); */
-/*     } */
-/*     lines = realloc(lines, (n + 1) * sizeof(*lines)); */
-/*     lines[n] = line; */
-/*     line = NULL; */
-/*     n++; */
-/*   } */
-/*   free(line); */
-/*   lines_t * newLines = malloc(sizeof(*newLines)); */
-/*   newLines->lines = lines; */
-/*   newLines->n_row = n; */
-/*   return newLines; */
-/* } */
-
 void freeNewLines(lines_t * lines) {
   for (size_t i = 0; i < lines->n_row; i++) {
     free(lines->lines[i]);
@@ -195,14 +197,6 @@ void freeNewLines(lines_t * lines) {
   free(lines->lines);
   free(lines);
 }
-
-/*
-  for (size_t i = 0; i < n; i++) {
-    printf("%s\n", lines[i]);
-    free(lines[i]);
-  }
-  free(lines);
-  }*/
 
 // do step2
 catarray_t * createCataArr(void) {
@@ -258,13 +252,6 @@ void addWord(char * cataName, char * word, catarray_t * cataArr) {
   }
 }
 
-/* void freeLines(char *** lines, size_t n) { */
-/*   for (size_t i = 0; i < n; i++) { */
-/*     free((*lines)[i]); */
-/*   } */
-/*   free(*lines); */
-/* } */
-
 void deln(char * word) {
   size_t len = strlen(word);
   word[len - 1] = '\0';
@@ -317,4 +304,28 @@ void addWord2Arr(const char * word, wordsArr_t * wordsArr) {
 void freeWordsArr(wordsArr_t * wordsArr) {
   free(wordsArr->words);
   free(wordsArr);
+}
+// do step4
+
+void updateCataArr(catarray_t * cats, const char * word, char * cataName) {
+  // search for the catagory
+  for (size_t i = 0; i < cats->n; i++) {
+    if (strcmp((cats->arr)[i].name, cataName) == 0) {
+      // malloc a new words list, copy the old words list except the word used
+      char ** newWords = malloc(((cats->arr)[i].n_words - 1) * sizeof(*newWords));
+      size_t m = 0;
+      for (size_t k = 0; k < (cats->arr)[i].n_words - 1; k++) {
+        if (strcmp((cats->arr)[i].words[k], word) == 0) {
+          free((cats->arr)[i].words[k]);
+          continue;
+        }
+        newWords[m] = (cats->arr)[i].words[k];
+        m++;
+      }
+      //free the old one,then point to the new words list
+      free((cats->arr)[i].words);
+      (cats->arr)[i].words = newWords;
+      break;
+    }
+  }
 }
