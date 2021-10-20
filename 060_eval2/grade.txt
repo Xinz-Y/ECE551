@@ -1,6 +1,6 @@
-Grading at 10/19/2021:17:39:22.289964
-For commit ID b26718f3df2caa3e2cba47f35fd94ea1de52403e
-Grading at Tue Oct 19 13:39:13 EDT 2021
+Grading at 10/20/2021:01:58:36.255901
+For commit ID 5287e741f46838f99caa882ca87fa078ad2538d6
+Grading at Tue Oct 19 21:58:26 EDT 2021
 Running your test cases
 
 Compiling story-step1
@@ -34,10 +34,18 @@ gcc -o story-step3 story-step3.o rand_story.o provided.o
 rm story-step3.o
 +-----------------------------------------------------------------------+
 Test case story-step3 words.txt
-Your program successfully indicated a failure case
+Once upon a time, there was a walrus. This walrus lived in a very
+
+scary cave. One day, it left its scary cave and met a walrus.
+
+Your program did not indicate a failure case
 +-----------------------------------------------------------------------+
 Test case story-step3 story2.txt words.txt
-Your program successfully indicated a failure case
+Once upon a time, there was a walrus. This walrus lived in a very
+
+scary cave. One day, it left its scary cave and met a walrus.
+
+Your program did not indicate a failure case
 
 Compiling story-step1
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
@@ -81,7 +89,7 @@ Your file matched the expected output
 Test case story-step3 words.txt story2.txt
 Your file matched the expected output
 
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
