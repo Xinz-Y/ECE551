@@ -26,5 +26,6 @@ int main(int argc, char ** argv) {
   freeWordsArr(wordsArr);
   freeCataArr(pcataArr);
   closefile(f);
+  closefile(f2);
   return EXIT_SUCCESS;
 }

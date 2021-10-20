@@ -14,7 +14,7 @@ struct lines_tag {
 typedef struct lines_tag lines_t;
 
 struct wordsArr_tag {
-  const char ** words;
+  char ** words;
   size_t n_words;
 };
 typedef struct wordsArr_tag wordsArr_t;
@@ -44,7 +44,7 @@ void addWord(char * cataName, char * word, catarray_t * cataArr);
 catarray_t * getCataArr(FILE * f);
 //function in step3
 wordsArr_t * createWordsArr(void);
-void addWord2Arr(const char * word, wordsArr_t * wordsArr);
+void addWord2Arr(char * word, wordsArr_t * wordsArr);
 void freeWordsArr(wordsArr_t * wordsArr);
 
 //function in step4

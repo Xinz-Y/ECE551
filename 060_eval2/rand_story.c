@@ -32,9 +32,9 @@ void changeWord(char ** line,
   char * cataName = strndup(start + 1, len);
   // in case of step1
   // if wordsArr is NULL , do not need to read from wordsArr and add shown cataName to wordsArr
-  const char * word;
+  char * word;
   if (wordsArr == NULL) {
-    word = chooseWord(cataName, cats);
+    word = strdup(chooseWord(cataName, cats));
     if (isReuse == 1) {
       updateCataArr(cats, word, cataName);
     }
@@ -49,7 +49,7 @@ void changeWord(char ** line,
         fprintf(stderr, "Wrong catagory!--Does not eixt in the cataArray!\n");
         exit(EXIT_FAILURE);
       }
-      word = chooseWord(cataName, cats);
+      word = strdup(chooseWord(cataName, cats));
       if (isReuse == 1) {
         updateCataArr(cats, word, cataName);
       }
@@ -61,7 +61,7 @@ void changeWord(char ** line,
         fprintf(stderr, "Wrong index!\n");
         exit(EXIT_FAILURE);
       }
-      word = wordsArr->words[wordsArr->n_words - num];
+      word = strdup(wordsArr->words[wordsArr->n_words - num]);
     }
     // save the word to wordsArr
     addWord2Arr(word, wordsArr);
@@ -86,6 +86,7 @@ void changeWord(char ** line,
   free(*line);
   *line = newLine;
   free(cataName);
+  free(word);
 }
 
 /* void changeWord2(char ** line, */
@@ -294,14 +295,17 @@ wordsArr_t * createWordsArr(void) {
   return wordsArr;
 }
 
-void addWord2Arr(const char * word, wordsArr_t * wordsArr) {
+void addWord2Arr(char * word, wordsArr_t * wordsArr) {
   wordsArr->words =
       realloc(wordsArr->words, (wordsArr->n_words + 1) * sizeof(*(wordsArr->words)));
-  (wordsArr->words)[wordsArr->n_words] = word;
+  (wordsArr->words)[wordsArr->n_words] = strdup(word);
   wordsArr->n_words++;
 }
 
 void freeWordsArr(wordsArr_t * wordsArr) {
+  for (size_t i = 0; i < wordsArr->n_words; i++) {
+    free(wordsArr->words[i]);
+  }
   free(wordsArr->words);
   free(wordsArr);
 }
@@ -312,9 +316,13 @@ void updateCataArr(catarray_t * cats, const char * word, char * cataName) {
   for (size_t i = 0; i < cats->n; i++) {
     if (strcmp((cats->arr)[i].name, cataName) == 0) {
       // malloc a new words list, copy the old words list except the word used
-      char ** newWords = malloc(((cats->arr)[i].n_words - 1) * sizeof(*newWords));
+      char ** newWords = NULL;
+      newWords = malloc(((cats->arr)[i].n_words - 1) * sizeof(*newWords));
+      for (size_t j = 0; j < (cats->arr)[i].n_words - 1; j++) {
+        newWords[j] = NULL;
+      }
       size_t m = 0;
-      for (size_t k = 0; k < (cats->arr)[i].n_words - 1; k++) {
+      for (size_t k = 0; k < (cats->arr)[i].n_words; k++) {
         if (strcmp((cats->arr)[i].words[k], word) == 0) {
           free((cats->arr)[i].words[k]);
           continue;
@@ -325,6 +333,7 @@ void updateCataArr(catarray_t * cats, const char * word, char * cataName) {
       //free the old one,then point to the new words list
       free((cats->arr)[i].words);
       (cats->arr)[i].words = newWords;
+      (cats->arr)[i].n_words--;
       break;
     }
   }
