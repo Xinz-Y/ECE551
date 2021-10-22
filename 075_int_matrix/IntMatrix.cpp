@@ -30,7 +30,7 @@ IntMatrix & IntMatrix::operator=(const IntMatrix & rhs) {
       temp[i] = new IntArray;
       *(temp[i]) = *(rhs.rows[i]);
     }
-    for (int i = 0; i < rhs.numRows; i++) {
+    for (int i = 0; i < numRows; i++) {
       delete rows[i];
     }
     delete[] rows;
