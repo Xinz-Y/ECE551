@@ -10,17 +10,17 @@ IntMatrix::IntMatrix(int r, int c) : numRows(r), numColumns(c), rows(new IntArra
 IntMatrix::IntMatrix(const IntMatrix & rhs) :
     numRows(rhs.numRows),
     numColumns(rhs.numColumns) {
-  IntArray ** temp = new IntArray *[rhs.numRows];
-  for (int i = 0; i < rhs.numRows; i++) {
-    // every point open a space in heap and defualt constructor
-    temp[i] = new IntArray;
-
-    *(temp[i]) = IntArray(*(rhs.rows[i]));
+  rows = new IntArray *[numRows];
+  for (int i = 0; i < numRows; i++) {
+    rows[i] = new IntArray;
+    *(rows[i]) = *(rhs.rows[i]);
   }
-  rows = temp;
 }
 
 IntMatrix::~IntMatrix() {
+  for (int i = 0; i < numRows; i++) {
+    delete rows[i];
+  }
   delete[] rows;
 }
 IntMatrix & IntMatrix::operator=(const IntMatrix & rhs) {
@@ -28,7 +28,10 @@ IntMatrix & IntMatrix::operator=(const IntMatrix & rhs) {
     IntArray ** temp = new IntArray *[rhs.numRows];
     for (int i = 0; i < rhs.numRows; i++) {
       temp[i] = new IntArray;
-      *(temp[i]) = IntArray(*(rhs.rows[i]));
+      *(temp[i]) = *(rhs.rows[i]);
+    }
+    for (int i = 0; i < rhs.numRows; i++) {
+      delete rows[i];
     }
     delete[] rows;
     rows = temp;
@@ -67,10 +70,10 @@ bool IntMatrix::operator==(const IntMatrix & rhs) const {
 
 IntMatrix IntMatrix::operator+(const IntMatrix & rhs) const {
   assert((numRows == rhs.numRows) && (numColumns == rhs.numColumns));
-  IntMatrix ans(*this);
+  IntMatrix ans(rhs);
   for (int r = 0; r < numRows; r++) {
     for (int c = 0; c < numColumns; c++) {
-      (*(ans.rows[r]))[c] = (*(rows[r]))[c] + (*(rhs.rows[r]))[c];
+      ans[r][c] = (*this)[r][c] + rhs[r][c];
     }
   }
   return ans;

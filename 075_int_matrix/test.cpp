@@ -31,7 +31,8 @@ int main(void) {
 
   IntMatrix c;
   std::cout << "c is:\n" << c << std::endl;
-  c = a + b;
+  //  c = a + b;
   std::cout << "Now, c is:\n" << c << std::endl;
+
   return EXIT_SUCCESS;
 }
