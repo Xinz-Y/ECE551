@@ -1,6 +1,7 @@
-#include "IntArray.h"
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
+
+#include "IntArray.h"
 
 int maxIndex(const IntArray & array) {
   if (array.size() == 0) {
@@ -28,16 +29,17 @@ void randomizeAndPrint(IntArray & array) {
   randomize(array);
   std::cout << array << std::endl;
   std::cout << "Largest element at index " << maxIndex(array) << std::endl;
-
 }
 
 int main(void) {
+  // test declare obejct
+
   IntArray intArray(10);
-  for (int i  = 0; i < intArray.size(); i++) {
-    intArray[i] = i*i;
+  for (int i = 0; i < intArray.size(); i++) {
+    intArray[i] = i * i;
   }
   IntArray intArray2(intArray);
-  
+
   if (intArray == intArray2) {
     std::cout << "The two int arrays are the same\n";
   }
@@ -56,10 +58,9 @@ int main(void) {
   }
 
   intArray2 = intArray;
-  std::cout << "Now intArray2 is "<< intArray2 << std::endl;
+  std::cout << "Now intArray2 is " << intArray2 << std::endl;
   if (intArray != intArray2) {
     std::cout << "The two int arrays are different\n";
-
   }
   else {
     std::cout << "The two int arrays are the same\n";
