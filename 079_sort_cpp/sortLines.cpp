@@ -41,6 +41,7 @@ int main(int argc, char ** argv) {
         lines.push_back(line);
       }
     }
+    std::sort(lines.begin(), lines.end());
     printLines(lines);
   }
 }
