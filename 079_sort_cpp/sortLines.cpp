@@ -37,8 +37,12 @@ int main(int argc, char ** argv) {
         perror("Error open");
         exit(EXIT_FAILURE);
       }
-      while (getline(myfile, line)) {
+      while (getline(myfile, line).good()) {
         lines.push_back(line);
+      }
+      if (!myfile.eof() && !myfile) {
+        std::cerr << "failed to read file" << std::endl;
+        exit(EXIT_FAILURE);
       }
       std::sort(lines.begin(), lines.end());
       printLines(lines);
