@@ -22,7 +22,7 @@ int main(int argc, char ** argv) {
     while (getline(std::cin, line).good()) {
       lines.push_back(line);
     }
-    if (!std::cin.eof()) {
+    if (!std::cin.eof() && !std::cin) {
       std::cerr << "Can not read strings from standard input" << std::endl;
       exit(EXIT_FAILURE);
     }
