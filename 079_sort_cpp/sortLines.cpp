@@ -40,8 +40,8 @@ int main(int argc, char ** argv) {
       while (getline(myfile, line)) {
         lines.push_back(line);
       }
+      std::sort(lines.begin(), lines.end());
+      printLines(lines);
     }
-    std::sort(lines.begin(), lines.end());
-    printLines(lines);
   }
 }
