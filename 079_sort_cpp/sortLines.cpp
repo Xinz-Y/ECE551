@@ -14,11 +14,11 @@ std::ostream & printLines(std::vector<std::string> lines) {
   return std::cout;
 }
 int main(int argc, char ** argv) {
-  std::vector<std::string> lines;
-  std::string line;
-
   if (argc == 1) {
     // read from standard input
+    std::vector<std::string> lines;
+    std::string line;
+
     while (getline(std::cin, line).good()) {
       lines.push_back(line);
     }
@@ -31,6 +31,9 @@ int main(int argc, char ** argv) {
   }
   else {
     for (int i = 1; i < argc; i++) {
+      std::vector<std::string> lines;
+      std::string line;
+
       std::ifstream myfile;
       myfile.open(argv[i]);
       if (!myfile.is_open()) {
