@@ -41,6 +41,7 @@ Matrix<T>::Matrix(int r, int c) : numRows(r), numColumns(c), rows(r) {
   while (it != rows.end()) {
     std::vector<T> vect(c);
     *it = vect;
+    ++it;
   }
 }
 template<typename T>
@@ -133,13 +134,16 @@ std::ostream & operator<<(std::ostream & s, const Matrix<T> & rhs) {
       if (j == 0) {
         s << (rhs[i])[j];
       }
-      s << ",";
-      s << (rhs[i])[j];
+      else {
+        s << ",";
+        s << (rhs[i])[j];
+      }
     }
     if (i == rhs.numRows - 1) {
+      s << "}";
       continue;
     }
-    s << "," << std::endl;
+    s << "}" << std::endl;
   }
   s << "]";
   return s;
