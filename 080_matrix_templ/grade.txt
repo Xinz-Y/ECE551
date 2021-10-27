@@ -1,43 +1,86 @@
-Grading at 10/27/2021:06:26:56.912931
-For commit ID 138094bb4e8a2a631a92e1070698e9770318f9e2
-Grading at Wed Oct 27 02:26:20 EDT 2021
+Grading at 10/27/2021:15:02:33.424063
+For commit ID 847b06f9a296f5cb8f7d995b8f88f1198ef039ea
+Grading at Wed Oct 27 11:02:26 EDT 2021
 -----------------------------------------------
 testcase 1 : Testing with Matrix<int>
 ...compiling...
 The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
+Line_26_did_not_match
+Line_27_did_not_match
+Line_28_did_not_match
+Your file did not match the expected output
+Testcase failed 
 -----------------------------------------------
 testcase 2 : Testing with Matrix<std::string>
 ...compiling...
 The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
+Line_26_did_not_match
+Line_27_did_not_match
+Line_28_did_not_match
+Your file did not match the expected output
+Testcase failed 
 -----------------------------------------------
 testcase 3 : Testing with Matrix<(a custom class we wrote)>
 ...compiling...
 The code compiled.
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
+Line_26_did_not_match
+Line_27_did_not_match
+Line_28_did_not_match
+Your file did not match the expected output
+Testcase failed 
 --------------------------------------------
 Preparing to test assert fails...
 Compiling assertion failure tester...
 Compiled.
 -----------------------------------------------
 testcase 4 :  operator[]: row number too high
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed
 -----------------------------------------------
 testcase 5 :  operator[]: row number too low
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed
 -----------------------------------------------
 testcase 6 :  operator+: different number of rows
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed
 -----------------------------------------------
 testcase 7 :  operator+: different number of columns
-  - Valgrind reported errors
-Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed
 
 Overall Grade: F
