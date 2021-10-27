@@ -127,7 +127,7 @@ Matrix<T> Matrix<T>::operator+(const Matrix<T> & rhs) const {
 }
 template<typename T>
 std::ostream & operator<<(std::ostream & s, const Matrix<T> & rhs) {
-  s << "[";
+  s << "[ ";
   for (int i = 0; i < rhs.numRows; i++) {
     s << "{";
     for (int j = 0; j < rhs.numColumns; j++) {
@@ -135,7 +135,7 @@ std::ostream & operator<<(std::ostream & s, const Matrix<T> & rhs) {
         s << (rhs[i])[j];
       }
       else {
-        s << ",";
+        s << ", ";
         s << (rhs[i])[j];
       }
     }
@@ -143,9 +143,9 @@ std::ostream & operator<<(std::ostream & s, const Matrix<T> & rhs) {
       s << "}";
       continue;
     }
-    s << "}" << std::endl;
+    s << "}," << std::endl;
   }
-  s << "]";
+  s << " ]";
   return s;
 }
 
