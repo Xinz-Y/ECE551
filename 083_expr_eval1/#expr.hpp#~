@@ -1,0 +1,25 @@
+#include <string>
+#include <sstream>
+class Expression{
+public:
+  virtual std::string toString() const =0;
+  virtual ~Expression(){};
+
+};
+
+class NumExpression : public Expression{
+  long number;
+public:
+  NumExpression(long num): number(num){};
+  virtual std::string toString() const {
+    std::stringstream out;
+    out << number;
+
+    return out.str();
+  }
+
+
+
+
+
+};
