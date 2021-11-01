@@ -55,12 +55,12 @@ class MinusExpression : public OpExpression {
 
 class TimesExpression : public OpExpression {
  public:
-  TimesExpression(Expression * lhs, Expression * rhs) : OpExpression('-', lhs, rhs){};
+  TimesExpression(Expression * lhs, Expression * rhs) : OpExpression('*', lhs, rhs){};
   virtual ~TimesExpression(){};
 };
 
 class DivExpression : public OpExpression {
  public:
-  DivExpression(Expression * lhs, Expression * rhs) : OpExpression('-', lhs, rhs){};
+  DivExpression(Expression * lhs, Expression * rhs) : OpExpression('/', lhs, rhs){};
   virtual ~DivExpression(){};
 };
