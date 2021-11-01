@@ -35,7 +35,10 @@ class OpExpression : public Expression {
     out << '(' << lhs->toString() << ' ' << op << ' ' << rhs->toString() << ')';
     return out.str();
   }
-  virtual ~OpExpression(){};
+  virtual ~OpExpression() {
+    delete lhs;
+    delete rhs;
+  };
 };
 
 class PlusExpression : public OpExpression {
