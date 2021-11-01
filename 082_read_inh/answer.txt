@@ -9,14 +9,14 @@ Aslan roars.
 Don't forget your destructors!
 ~Lion(Aslan)
 Aslan roars.
-cat(Aslan)
+~cat(Aslan)
 Aslan purrs.
 ~Animal(Aslan)
 ~Lion(Leon)
 Leon roars.
-cat(Leon)
+~cat(Leon)
 Leon purrs.
 ~Animal(Leon)
-cat(Fluffy)
+~cat(Fluffy)
 Fluffy purrs.
 ~Animal(Fluffy)
