@@ -141,23 +141,23 @@ class LinkedList {
   int find(const T & item) const {
     for (int i = 0; i < size; i++) {
       // use [] to check if equal
-      if (this[i] == item) {
+      // const LinkedList * ptr = this;
+      if ((*this)[i] == item) {
         return i;
       }
     }
     return -1;
   }
   // copy constructor
-  LinkedList(const LinkedList<T> & list) : head(NULL), tail(NULL), size(list.size) {
+  LinkedList(const LinkedList<T> & list) : head(NULL), tail(NULL), size(0) {
     // create a const ptr
-    const LinkedList * ptr = &list;
-    for (int i = 0; i < size; i++) {
-      const T & dataToadd = (*ptr)[i];
+    for (int i = 0; i < list.size; i++) {
+      const T & dataToadd = list[i];
       addBack(dataToadd);
     }
   }
   // use swap
-  LinkedList & operator=(const LinkedList & rhs) {
+  LinkedList & operator=(const LinkedList<T> & rhs) {
     LinkedList temp(rhs);
     Node * head_temp = head;
     Node * tail_temp = tail;

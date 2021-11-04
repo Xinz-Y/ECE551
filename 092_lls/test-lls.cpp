@@ -152,9 +152,17 @@ class Tester {
     il.addFront(1);
     il.addFront(2);
     il.addFront(3);
-    assert((*ptr)[0] == 3);
+    assert(il[0] == 3);
     assert((*ptr)[1] == 2);
     assert((*ptr)[2] == 1);
+  }
+  void testFind() {
+    IntList il;
+    il.addBack(1);
+    il.addBack(2);
+    il.addBack(3);
+    assert(il.find(1) == 0);
+    assert(il.find(99) == -1);
   }
 };
 
@@ -173,6 +181,8 @@ int main(void) {
 
   t.testRemovals();
   std::cout << "test remove is right" << '\n';
+  t.testFind();
+  std::cout << "Find is right" << '\n';
 
   // write calls to your other test methods here
   return EXIT_SUCCESS;
