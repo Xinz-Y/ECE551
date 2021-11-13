@@ -131,12 +131,10 @@ std::ostream & operator<<(std::ostream & stream, const Page & pg) {
     if (pg.navi.choices[0].second.compare("LOSE") != 0) {
       stream << "Congratulations! You have won. Hooray!"
              << "\n";
-      stream << '\n';
     }
     else {
       stream << "Sorry, you have lost. Better luck next time!"
              << "\n";
-      stream << '\n';
     }
     return stream;
   }
