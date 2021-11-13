@@ -11,5 +11,8 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   Page pg(argv[1]);
+
+  //int main() {
+  // Page pg("./story1/page11.txt");
   std::cout << pg;
 }

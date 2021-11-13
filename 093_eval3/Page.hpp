@@ -54,12 +54,13 @@ Page::Page(const std::string s) {
   }
   std::string line;
   bool navi_comp = false;
-  int row = 0;
+  int IsFirst = 1;
   while (getline(pg_file, line).good()) {
     // three coner cases for the first line
-    if (row == 0) {
+    if (IsFirst == 1) {
+      IsFirst = 0;
       if (line[0] == '#') {
-        std::cerr << "There is no navigatio part"
+        std::cerr << "There is no navigation part"
                   << "\n";
         exit(EXIT_FAILURE);
       }
@@ -72,7 +73,7 @@ Page::Page(const std::string s) {
         continue;
       }
     }
-    row++;
+
     if (line[0] == '#') {
       navi_comp = true;
       continue;
@@ -124,21 +125,24 @@ std::ostream & operator<<(std::ostream & stream, const Page & pg) {
     stream << *it << "\n";
   }
   stream << "\n";
-  stream << "Waht would you like to do?";
-  stream << "\n";
   //print the navigation
   // in the cases of win and lose
   if (pg.navi.choices[0].first == -1) {
-    if (pg.navi.choices[0].second.compare("LOSE") == 0) {
+    if (pg.navi.choices[0].second.compare("LOSE") != 0) {
       stream << "Congratulations! You have won. Hooray!"
              << "\n";
+      stream << '\n';
     }
     else {
       stream << "Sorry, you have lost. Better luck next time!"
              << "\n";
+      stream << '\n';
     }
     return stream;
   }
+  stream << "What would you like to do?"
+         << "\n";
+  stream << "\n";
   int index = 1;
   for (std::vector<std::pair<int, std::string> >::const_iterator it =
            pg.navi.choices.begin();
