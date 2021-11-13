@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <cstring>
+#include <fstream>
+#include <iostream>
+#include <utility>
+#include <vector>
+
+class Page {
+ private:
+  int pg_num;
+  int * prev_list;
+  int * next_list;
+  class Navigation {
+    std::vector<std::pair<int, std::string> > choices;
+    std::pair<int, std::string> choice;
+    // added later the methods for Navigation
+  };
+  class Text {
+    std::vector<std::string> lines;
+    std::string line;
+    // added later the methods for Text
+  };
+  Navigation navi;
+  Text tex;
+
+ public:
+  Page() : pg_num(0), prev_list(NULL), next_list(NULL){};
+  explicit Page(const std::string s) {
+    pg_num = std::atoi(s);
+
+    std::ifstream pg_file;
+    pg_file.open(s);
+  }
+};
