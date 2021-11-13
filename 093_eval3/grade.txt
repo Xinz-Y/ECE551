@@ -1,6 +1,6 @@
-Grading at 11/13/2021:07:09:42.708121
-For commit ID f8fb5021978ddf5933c57fc99369614168ad26c9
-Grading at Sat Nov 13 02:09:33 EST 2021
+Grading at 11/13/2021:20:51:11.504775
+For commit ID c24a293309a460f16975ce7ae0a98f4db3ed15c8
+Grading at Sat Nov 13 15:51:01 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -8,92 +8,39 @@ make: 'cyoa-step1' is up to date.
 Compiled for step 1
 +-----------------------------------------------------------------------+
 Test case 1 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page1.txt
-20c20,21
-< Waht would you like to do?
----
-> What would you like to do?
-> 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 2 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page2.txt
-20c20,21
-< Waht would you like to do?
----
-> What would you like to do?
-> 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 3 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page3.txt
-20c20,21
-< Waht would you like to do?
----
-> What would you like to do?
-> 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 4 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page4.txt
-24c24,25
-< Waht would you like to do?
----
-> What would you like to do?
-> 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 5 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page5.txt
-16c16,17
-< Waht would you like to do?
----
-> What would you like to do?
-> 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 6 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page1.txt
-11c11,12
-< Waht would you like to do?
----
-> What would you like to do?
-> 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 7 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page2.txt
-6c6,7
-< Waht would you like to do?
----
-> What would you like to do?
-> 
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 8 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page3.txt
-1c1,4
-< There is no navigatio part
----
-> You enjoy a quiet evening at home with a mug of herbal tea and your cats,
-> who only think they are tiny dragons.
-> 
-> Congratulations! You have won. Hooray!
+5d4
+< 
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 9 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page4.txt
-1c1,4
-< There is no navigatio part
----
-> Your famed sword Ice becomes embedded in the dragon's neck scales, and the
-> dragon rolls over, crushing you.
-> 
-> Sorry, you have lost. Better luck next time!
+5d4
+< 
 Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 10 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page5.txt
-1c1,7
-< There is no navigatio part
----
-> The ruby is slippery, as though wet, and it glides through your fingers,
-> crashing hard into a golden plate, which clatters and crashes like a
-> cymbal.
-> 
-> The dragon wakes up, roasts you like a marshmallow, and eats you whole.
-> 
-> Sorry, you have lost. Better luck next time!
+8d7
+< 
 Your file did not match the expected output
 Step 1: Failed test cases as above
 
