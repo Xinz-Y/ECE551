@@ -14,6 +14,10 @@ int ConvertInput(const Page & current, std::string line) {
   int choice_num = 0;
   //check the input is number and a valid choice
   try {
+    // without this if, empty line will be regarded as 0
+    if (line.empty()) {
+      throw InputError();
+    }
     if (!IsNum(line)) {
       throw InputError();
     }

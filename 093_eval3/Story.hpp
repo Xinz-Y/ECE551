@@ -116,6 +116,6 @@ Story & Story::makeStory(const std::string & dirName) {
   }
   // check if pages have sources
   makePgSource(pages);
-  std::cerr << "All the pages are correct! Load stroy suceessfully!" << '\n';
+  //  std::cerr << "All the pages are correct! Load stroy suceessfully!" << '\n';
   return *this;
 }
