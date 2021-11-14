@@ -46,7 +46,7 @@ int main(int argc, char ** argv) {
   Page & current = pages[0];
   while (!current.IsWinPg() && !current.IsLosePg()) {
     //    std::cout << "Current page is " << current.getPgNum() << '\n';
-    std::cout << current.getPgNum() << '\n';
+    //std::cout << current.getPgNum() << '\n';
     std::cout << current;
     // read from the standard input
     std::string line;
@@ -63,7 +63,7 @@ int main(int argc, char ** argv) {
   }
   // this page is win or lose
   //  std::cout << "Current page is " << current.getPgNum() << '\n';
-  std::cout << current.getPgNum() << '\n';
+  //  std::cout << current.getPgNum() << '\n';
   std::cout << current;
   return EXIT_SUCCESS;
 }
