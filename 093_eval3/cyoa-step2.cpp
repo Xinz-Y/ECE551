@@ -46,10 +46,10 @@ int main(int argc, char ** argv) {
     // read from the standard input
     std::string line;
     getline(std::cin, line);
-    /*    if (!std::cin.eof() && !std::cin) {
+    if (!std::cin.eof() && !std::cin) {
       std::cerr << "Can not read strings from the standard input" << '\n';
       exit(EXIT_FAILURE);
-      }*/
+    }
     int choice_num = 0;
     //check the input is number and a valid choice
     choice_num = ConvertInput(current, line);
