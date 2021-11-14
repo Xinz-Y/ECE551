@@ -1,6 +1,6 @@
-Grading at 11/14/2021:21:39:15.985996
-For commit ID d3c24b7d074e4c547b2452d1d327fce9dd3c6fe9
-Grading at Sun Nov 14 16:39:02 EST 2021
+Grading at 11/14/2021:21:43:00.062132
+For commit ID 8500008336836e2c00188ee72b38b8f02954bb9a
+Grading at Sun Nov 14 16:42:46 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -8,71 +8,38 @@ make: 'cyoa-step1' is up to date.
 Compiled for step 1
 +-----------------------------------------------------------------------+
 Test case 1 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page1.txt
-25,27d24
-< pages to go are2
-< pages to go are3
-< pages to go are4
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 2 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page2.txt
-25,27d24
-< pages to go are5
-< pages to go are6
-< pages to go are7
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 3 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page3.txt
-25,27d24
-< pages to go are8
-< pages to go are9
-< pages to go are7
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 4 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page4.txt
-29,31d28
-< pages to go are11
-< pages to go are12
-< pages to go are7
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 5 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page5.txt
-21,23d20
-< pages to go are14
-< pages to go are13
-< pages to go are10
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 6 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page1.txt
-16,18d15
-< pages to go are2
-< pages to go are3
-< pages to go are4
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 7 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page2.txt
-10,11d9
-< pages to go are5
-< pages to go are6
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 8 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page3.txt
-5d4
-< pages to go are-1
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 9 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page4.txt
-5d4
-< pages to go are-1
-Your file did not match the expected output
+Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 10 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page5.txt
-8d7
-< pages to go are-1
-Your file did not match the expected output
-Step 1: Failed test cases as above
+Your file matched the expected output
+Step 1: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step2
-make: 'cyoa-step2' is up to date.
+g++ -o cyoa-step2 -ggdb3 -Wall -Werror -pedantic -std=gnu++98 cyoa-step2.cpp
 Compiled for step 2
 Input to story is
 1
