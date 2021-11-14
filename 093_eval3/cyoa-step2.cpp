@@ -58,7 +58,7 @@ int main(int argc, char ** argv) {
     //check the input is number and a valid choice
     choice_num = ConvertInput(current, line);
     int act_pg_num = current.getPgTogo()[choice_num - 1];
-    current = pages[act_pg_num];
+    current = pages[act_pg_num - 1];
   }
   // this page is win or lose
   std::cout << "Current page is " << current.getPgNum() << '\n';
