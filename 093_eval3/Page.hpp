@@ -14,10 +14,19 @@ bool IsNum(const std::string & s) {
   }
   return true;
 }
+// extract the page numbre from the pagename
+int ExtractPgNum(const std::string & s) {
+  // first find "page" in the string
+  size_t pos = s.rfind("page");
+  int ans = std::atoi((s.substr(pos + 4)).c_str());
+  return ans;
+}
 
 class Page {
  private:
   int pg_num;
+  bool IsWin;
+  bool IsLose;
   //  int * prev_list;
   // int * next_list;
   class Navigation {
@@ -37,14 +46,20 @@ class Page {
 
  public:
   // Page() : pg_num(0), prev_list(NULL), next_list(NULL){};
-  Page() : pg_num(0){};
+  Page() : pg_num(0), IsWin(false), IsLose(false){};
   explicit Page(const std::string s);
   friend std::ostream & operator<<(std::ostream & steam, const Page & pg);
+  bool IsWinPg() const { return IsWin; }
+  bool IsLosePg() const { return IsLose; }
+  int getPgNum() const { return pg_num; }
 };
 
 // for now the prevlist and nextlist are all null
 Page::Page(const std::string s) {
-  pg_num = std::atoi(s.c_str());
+  // std::cout << "file name is " << s << '\n';
+  pg_num = ExtractPgNum(s);
+  IsWin = false;
+  IsLose = false;
   std::ifstream pg_file;
   pg_file.open(s.c_str());
   // check if file is opened
@@ -66,10 +81,12 @@ Page::Page(const std::string s) {
       }
       if (line.compare("LOSE") == 0) {
         navi.choices.push_back(std::pair<int, std::string>(-1, "LOSE"));
+        IsLose = true;
         continue;
       }
       if (line.compare("WIN") == 0) {
         navi.choices.push_back(std::pair<int, std::string>(-1, "WIN"));
+        IsWin = true;
         continue;
       }
     }
