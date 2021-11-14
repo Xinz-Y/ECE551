@@ -1,6 +1,6 @@
-Grading at 11/13/2021:20:55:26.135891
-For commit ID 334af2e7e977a2dc7102d96e901f09d1cdd6bbfa
-Grading at Sat Nov 13 15:55:16 EST 2021
+Grading at 11/14/2021:21:39:15.985996
+For commit ID d3c24b7d074e4c547b2452d1d327fce9dd3c6fe9
+Grading at Sun Nov 14 16:39:02 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -8,39 +8,103 @@ make: 'cyoa-step1' is up to date.
 Compiled for step 1
 +-----------------------------------------------------------------------+
 Test case 1 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page1.txt
-Your file matched the expected output
+25,27d24
+< pages to go are2
+< pages to go are3
+< pages to go are4
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 2 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page2.txt
-Your file matched the expected output
+25,27d24
+< pages to go are5
+< pages to go are6
+< pages to go are7
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 3 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page3.txt
-Your file matched the expected output
+25,27d24
+< pages to go are8
+< pages to go are9
+< pages to go are7
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 4 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page4.txt
-Your file matched the expected output
+29,31d28
+< pages to go are11
+< pages to go are12
+< pages to go are7
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 5 (success): cyoa-step1 /usr/local/ece551/cyoa/story1/page5.txt
-Your file matched the expected output
+21,23d20
+< pages to go are14
+< pages to go are13
+< pages to go are10
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 6 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page1.txt
-Your file matched the expected output
+16,18d15
+< pages to go are2
+< pages to go are3
+< pages to go are4
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 7 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page2.txt
-Your file matched the expected output
+10,11d9
+< pages to go are5
+< pages to go are6
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 8 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page3.txt
-Your file matched the expected output
+5d4
+< pages to go are-1
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 9 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page4.txt
-Your file matched the expected output
+5d4
+< pages to go are-1
+Your file did not match the expected output
 +-----------------------------------------------------------------------+
 Test case 10 (success): cyoa-step1 /usr/local/ece551/cyoa/story2/page5.txt
-Your file matched the expected output
-Step 1: PASSED Pre-Grader Test Cases
+8d7
+< pages to go are-1
+Your file did not match the expected output
+Step 1: Failed test cases as above
 
 Compiling cyoa-step2
-The code did not compile!
-Did not compile for step 2
+make: 'cyoa-step2' is up to date.
+Compiled for step 2
+Input to story is
+1
+1
+1
+
++-----------------------------------------------------------------------+
+Test case 11 (success): cyoa-step2 /usr/local/ece551/cyoa/story1 < pregrader_input.txt
+Valgrind reported memory errors
+Input to story is
+3
+2
+
++-----------------------------------------------------------------------+
+Test case 12 (success): cyoa-step2 /usr/local/ece551/cyoa/story1 < pregrader_input.txt
+Valgrind reported memory errors
+Input to story is
+1
+2
+2
+1
+
++-----------------------------------------------------------------------+
+Test case 13 (success): cyoa-step2 /usr/local/ece551/cyoa/story2 < pregrader_input.txt
+Valgrind reported memory errors
+Input to story is
+3
+
++-----------------------------------------------------------------------+
+Test case 14 (success): cyoa-step2 /usr/local/ece551/cyoa/story2 < pregrader_input.txt
+Valgrind reported memory errors
+Step 2: Failed test cases as above
 
 Compiling cyoa-step3
 The code did not compile!
