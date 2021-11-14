@@ -58,11 +58,9 @@ Story & Story::makeStory(const std::string & dirName) {
   while (true) {
     std::string fileName = dirName;
     fileName.append("/page");
-    // fileName.append(std::to_string(pg_num));
     std::stringstream string;
     string << fileName.c_str() << pg_num << ".txt";
     fileName = string.str();
-    std::cout << "Now we open filename" << fileName << '\n';
     if (pg_num == 15) {
       break;
     }
@@ -72,18 +70,17 @@ Story & Story::makeStory(const std::string & dirName) {
         fs.close();
       }
       catch (std::ifstream::failure e) {
-        std::cout << "catch block works" << '\n';
+        // std::cout << "catch block works" << '\n';
         //if (!fs.is_open()) {
         if (pg_num == 1) {
           std::cerr << "Your directory does not have the page1.txt"
                     << "\n";
           exit(EXIT_FAILURE);
         }
-        std::cout << "Load the dir is finished!" << '\n';
         break;
       }
       // if it is open succesfully, then load the file as normal
-      std::cerr << "Now we are create the page" << '\n';
+      // std::cerr << "Now we are create the page" << '\n';
       pages.push_back(Page(fileName));
       //total_PgNum++;
       pg_num++;
