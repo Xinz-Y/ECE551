@@ -27,7 +27,7 @@ class Page {
   int pg_num;
   bool IsWin;
   bool IsLose;
-  //  int * prev_list;
+  std::vector<int> prev_list;
   // int * next_list;
   class Navigation {
    public:
@@ -52,6 +52,10 @@ class Page {
   bool IsWinPg() const { return IsWin; }
   bool IsLosePg() const { return IsLose; }
   int getPgNum() const { return pg_num; }
+  std::vector<int> getPgTogo() const;
+  void setPrev(const std::vector<int> & Pgsources) {
+    prev_list = Pgsources;  //deep copy by default
+  }
 };
 
 // for now the prevlist and nextlist are all null
@@ -60,6 +64,7 @@ Page::Page(const std::string s) {
   pg_num = ExtractPgNum(s);
   IsWin = false;
   IsLose = false;
+  //we do not need to expicitely initialize the prev_list as it is vector object
   std::ifstream pg_file;
   pg_file.open(s.c_str());
   // check if file is opened
@@ -118,6 +123,11 @@ Page::Page(const std::string s) {
         exit(EXIT_FAILURE);
       }
       int num = std::atoi(first.c_str());
+      // the number must be postive
+      if (num <= 0) {
+        std::cerr << "This page to go is not a positive number" << '\n';
+        exit(EXIT_FAILURE);
+      }
       std::string back = line.substr(pos + 1);
       navi.choices.push_back(std::pair<int, std::string>(num, back));
     }
@@ -168,4 +178,12 @@ std::ostream & operator<<(std::ostream & stream, const Page & pg) {
   }
 
   return stream;
+}
+
+std::vector<int> Page::getPgTogo() const {
+  std::vector<int> ans;
+  for (size_t i = 0; i < navi.choices.size(); ++i) {
+    ans.push_back(navi.choices[i].first);
+  }
+  return ans;
 }
