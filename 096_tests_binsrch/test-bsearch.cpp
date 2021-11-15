@@ -84,8 +84,11 @@ int main() {
   check(g, 0, 1, 0, "two element");
   check(g, 3, 3, 3, "only one postive element");
   check(g, 0, 0, 0, "0");
-  check(g, -5, -5, -6, "only one negative element");
-  check(g, -5, 0, -1, "0 is left node");
+  check(g, -5, -5, -5, "only one negative element");
+  check(g, -5, 1, 0, "0 is left node");
+  //check(g, 0, 5, 0, "right side");
+  check(g, -1, 100, 0, "extra case");
+  check(g, -3, 0, -1, "test1");
   //  check(g, 0, 2, 0, "correct");
   delete g;
   return EXIT_SUCCESS;
