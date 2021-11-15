@@ -34,9 +34,6 @@ void makePgSource(std::vector<Page> pages) {
 
 class Story {
  private:
-  //Page * head;
-  // Page * win_page;
-  // Page * lose_page;
   std::vector<Page> pages;
   std::vector<int> win_pages;  //maybe many win pages
   std::vector<int> lose_pages;
@@ -61,30 +58,23 @@ Story & Story::makeStory(const std::string & dirName) {
     std::stringstream string;
     string << fileName.c_str() << pg_num << ".txt";
     fileName = string.str();
-    if (pg_num == 15) {
+    try {
+      fs.open(fileName.c_str());
+      fs.close();
+    }
+    catch (std::ifstream::failure e) {
+      // std::cout << "catch block works" << '\n';
+      //if (!fs.is_open()) {
+      if (pg_num == 1) {
+        std::cerr << "Your directory does not have the page1.txt"
+                  << "\n";
+        exit(EXIT_FAILURE);
+      }
       break;
     }
-    else {
-      try {
-        fs.open(fileName.c_str());
-        fs.close();
-      }
-      catch (std::ifstream::failure e) {
-        // std::cout << "catch block works" << '\n';
-        //if (!fs.is_open()) {
-        if (pg_num == 1) {
-          std::cerr << "Your directory does not have the page1.txt"
-                    << "\n";
-          exit(EXIT_FAILURE);
-        }
-        break;
-      }
-      // if it is open succesfully, then load the file as normal
-      // std::cerr << "Now we are create the page" << '\n';
-      pages.push_back(Page(fileName));
-      //total_PgNum++;
-      pg_num++;
-    }
+    // if it is open succesfully, then load the file as normal
+    pages.push_back(Page(fileName));
+    pg_num++;
   }
   total_PgNum = pages.size();
   // now we need to find which one is the winPg and the losePg one
@@ -114,7 +104,7 @@ Story & Story::makeStory(const std::string & dirName) {
       }
     }
   }
-  // check if pages have sources
+  // check if pages have sources add updated the prev_list fields for each page;
   makePgSource(pages);
   //  std::cerr << "All the pages are correct! Load stroy suceessfully!" << '\n';
   return *this;
