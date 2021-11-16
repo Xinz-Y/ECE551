@@ -27,13 +27,13 @@ int binarySearchForZero(Function<int, int> * f, int low, int high) {
       right = mid;
     }
     else if (val < 0) {
-      left = mid;
+      left = mid + 1;
     }
     else {
       return mid;
     }
   }
-  return (low == left) ? low : low - 1;
+  return low;
 }
 
 class CountedIntFn : public Function<int, int> {
