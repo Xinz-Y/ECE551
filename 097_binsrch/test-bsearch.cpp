@@ -26,11 +26,8 @@ int binarySearchForZero(Function<int, int> * f, int low, int high) {
     if (val > 0) {
       right = mid;
     }
-    else if (val < 0) {
-      left = mid + 1;
-    }
     else {
-      return mid;
+      left = mid + 1;
     }
   }
   return (low == left) ? low : low - 1;
