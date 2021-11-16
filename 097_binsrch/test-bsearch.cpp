@@ -13,6 +13,7 @@ int binarySearchForZero(Function<int, int> * f, int low, int high) {
   }
   int left = low;
   int right = high;
+
   while (left < right) {
     int mid = left + (right - left) / 2;
     int val = f->invoke(mid);
@@ -21,13 +22,13 @@ int binarySearchForZero(Function<int, int> * f, int low, int high) {
       right = mid;
     }
     else if (val < 0) {
-      left = mid + 1;
+      left = mid;
     }
     else {
       return mid;
     }
   }
-  return (low == left) ? low : high - 1;
+  return (low == left) ? low : low - 1;
 }
 
 class CountedIntFn : public Function<int, int> {
