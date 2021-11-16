@@ -3,8 +3,32 @@
 #include <iostream>
 
 #include "function.h"
-#include "search.h"
-extern int binarySearchForZero(Function<int, int> * f, int low, int high);
+//#include "search.cpp"
+//extern int binarySearchForZero(Function<int, int> * f, int low, int high);
+
+int binarySearchForZero(Function<int, int> * f, int low, int high) {
+  //check if low and high are different sigh
+  if (low == high) {
+    return low;
+  }
+  int left = low;
+  int right = high;
+  while (left < right) {
+    int mid = left + (right - left) / 2;
+    int val = f->invoke(mid);
+    // we assume the
+    if (val > 0) {
+      right = mid;
+    }
+    else if (val < 0) {
+      left = mid + 1;
+    }
+    else {
+      return mid;
+    }
+  }
+  return (low == left) ? low : high - 1;
+}
 
 class CountedIntFn : public Function<int, int> {
  protected:
@@ -39,6 +63,7 @@ void check(Function<int, int> * f,
   if (high > low) {
     CountedIntFn * wrap = new CountedIntFn(log2(high - low) + 1, f, mesg);
     int ans = binarySearchForZero(wrap, low, high);
+    delete wrap;
     if (ans != expected_ans) {
       std::cerr << "The final answer is not expected in " << mesg << '\n';
       exit(EXIT_FAILURE);
@@ -48,6 +73,7 @@ void check(Function<int, int> * f,
   else {
     CountedIntFn * wrap = new CountedIntFn(1, f, mesg);
     int ans = binarySearchForZero(wrap, low, high);
+    delete wrap;
     if (ans != expected_ans) {
       std::cerr << "The final answer is not expected in " << mesg << '\n';
       exit(EXIT_FAILURE);
@@ -65,21 +91,15 @@ int main() {
    public:
     virtual int invoke(int arg) { return arg; }
   };
-  /*
-  Function<int, int> * f = new SinFunction();
-  check(f, 0, 150000, 52359, "sin funciton");
-  //check(f, 0, -1, 1000, "low>high");
-  check(f, 0, 1, 0, "all negative");
-  check(f, 100000, 150000, 100000, "all positive");
-  check(f, 0, 0, -2, "only one negative element");
-  check(f, 100000, 100000, 100000, "only one postive element");
-  */
 
   Function<int, int> * g = new LinearFunction();
   check(g, -3, 10, 0, "linear x");
+  std::cout << "pass one" << '\n';
   //  check(g, 9, 3, 0, "low > high");
   check(g, -100000, 1000000000, 0, "big number");
+  std::cout << "pass two" << '\n';
   check(g, 5, 9, 5, "all positive");
+  std::cout << "pass three" << '\n';
   check(g, -100, -4, -5, "all negative");
   check(g, 0, 1, 0, "two element");
   check(g, 3, 3, 3, "only one postive element");
