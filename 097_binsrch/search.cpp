@@ -8,12 +8,12 @@ int binarySearchForZero(Function<int, int> * f, int low, int high) {
   }
   int left = low;
   int right = high;
-  if (f->invoke(left) < 0 && f->invoke(right) < 0) {
+  /*  if (f->invoke(left) < 0 && f->invoke(right) < 0) {
     return high - 1;
   }
   if (f->invoke(left) > 0 && f->invoke(right) > 0) {
     return low;
-  }
+    }*/
   // since we assumen the function is monotonic, f(left)<f(right)
   while (left < right) {
     int mid = left + (right - left) / 2;
@@ -22,12 +22,9 @@ int binarySearchForZero(Function<int, int> * f, int low, int high) {
     if (val > 0) {
       right = mid;
     }
-    else if (val < 0) {
+    else {
       left = mid + 1;
     }
-    else {
-      return mid;
-    }
   }
-  return (low == left) ? low : high - 1;
+  return (low == left) ? low : left - 1;
 }
