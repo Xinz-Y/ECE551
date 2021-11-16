@@ -1,32 +1,22 @@
-Grading at 11/16/2021:01:45:36.339385
-For commit ID 3d578247201053f14325772ab65f30d0d124763e
-Grading at Mon Nov 15 20:45:21 EST 2021
+Grading at 11/16/2021:02:08:54.513632
+For commit ID b45ccb17183bbe9b9ed1216b9f84521c57f9e28a
+Grading at Mon Nov 15 21:08:48 EST 2021
 Stripping out any main you may have written, and compiling...
 Testcase 1
 -----------------
-  - Valgrind reported errors
-==444== Memcheck, a memory error detector
-==444== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==444== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==444== Command: ./binSearch f 0 150000
-==444== Parent PID: 442
-==444== 
-  - Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the wrong result
+  - Test Failed
 Testcase 2
 -----------------
   - Valgrind was clean (no errors, no memory leaks)
-  - You got the correct result in 18 steps (correct is 15)
+  - You got the correct result in 16 steps (correct is 15)
   - Test Passed
 Testcase 3
 -----------------
-  - Valgrind reported errors
-==598== Memcheck, a memory error detector
-==598== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==598== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==598== Command: ./binSearch h -10000 100000
-==598== Parent PID: 597
-==598== 
-  - Valgrind reported errors (test failed).
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the wrong result
+  - Test Failed
 Testcase 4
 -----------------
   - Valgrind was clean (no errors, no memory leaks)
@@ -40,12 +30,12 @@ Testcase 5
 Testcase 6
 -----------------
   - Valgrind was clean (no errors, no memory leaks)
-  - You got the correct result in 3 steps (correct is 12)
+  - You got the correct result in 13 steps (correct is 12)
   - Test Passed
 Testcase 7
 -----------------
   - Valgrind was clean (no errors, no memory leaks)
-  - You got the correct result in 2 steps (correct is 4)
+  - You got the correct result in 3 steps (correct is 4)
   - Test Passed
 
 Overall Grade: C
