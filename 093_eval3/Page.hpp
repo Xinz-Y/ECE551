@@ -66,7 +66,7 @@ Page::Page(const std::string s) {
   IsLose = false;
   //we do not need to expicitely initialize the prev_list as it is vector object
   std::ifstream pg_file;
-  pg_file.open(s.c_str());
+  pg_file.open(s.c_str(), std::ios_base::in);
   // check if file is opened
   if (!pg_file.is_open()) {
     perror("Error open");

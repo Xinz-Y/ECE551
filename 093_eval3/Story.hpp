@@ -59,7 +59,7 @@ Story & Story::makeStory(const std::string & dirName) {
     string << fileName.c_str() << pg_num << ".txt";
     fileName = string.str();
     try {
-      fs.open(fileName.c_str());
+      fs.open(fileName.c_str(), std::ios_base::in);
       fs.close();
     }
     catch (std::ifstream::failure e) {
