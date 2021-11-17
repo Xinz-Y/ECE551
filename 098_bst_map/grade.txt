@@ -1,0 +1,257 @@
+Grading at 11/17/2021:04:40:29.235845
+For commit ID 39f3f4903044b02a71ff37789b2241d10ae7aa3a
+Grading at Tue Nov 16 23:40:27 EST 2021
+-----------------------------------------------
+testcase 1 : Testing with BstMap<int,int>
+...compiling...
+89-tester.cpp:55:9: error: ‘Map’ does not name a type
+ typedef Map<KEYTYPE,VALTYPE> MapTy;
+         ^~~
+89-tester.cpp: In function ‘int main()’:
+89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
+   MapTy * m = bmt;
+   ^~~~~
+89-tester.cpp:71:3: note: suggested alternative: ‘BSTMapTy’
+   MapTy * m = bmt;
+   ^~~~~
+   BSTMapTy
+89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
+   MapTy * m = bmt;
+           ^
+89-tester.cpp:71:11: note: suggested alternative: ‘tm’
+   MapTy * m = bmt;
+           ^
+           tm
+89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 2 : Testing with BstMap<int,std::string>
+...compiling...
+89-tester.cpp:55:9: error: ‘Map’ does not name a type
+ typedef Map<KEYTYPE,VALTYPE> MapTy;
+         ^~~
+89-tester.cpp: In function ‘int main()’:
+89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
+   MapTy * m = bmt;
+   ^~~~~
+89-tester.cpp:71:3: note: suggested alternative: ‘BSTMapTy’
+   MapTy * m = bmt;
+   ^~~~~
+   BSTMapTy
+89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
+   MapTy * m = bmt;
+           ^
+89-tester.cpp:71:11: note: suggested alternative: ‘tm’
+   MapTy * m = bmt;
+           ^
+           tm
+89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
+...compiling...
+89-tester.cpp:55:9: error: ‘Map’ does not name a type
+ typedef Map<KEYTYPE,VALTYPE> MapTy;
+         ^~~
+89-tester.cpp: In function ‘int main()’:
+89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
+   MapTy * m = bmt;
+   ^~~~~
+89-tester.cpp:71:3: note: suggested alternative: ‘BSTMapTy’
+   MapTy * m = bmt;
+   ^~~~~
+   BSTMapTy
+89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
+   MapTy * m = bmt;
+           ^
+89-tester.cpp:71:11: note: suggested alternative: ‘tm’
+   MapTy * m = bmt;
+           ^
+           tm
+89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 4 : Testing with BstMap<std::string,int>
+...compiling...
+89-tester.cpp:55:9: error: ‘Map’ does not name a type
+ typedef Map<KEYTYPE,VALTYPE> MapTy;
+         ^~~
+89-tester.cpp: In function ‘int main()’:
+89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
+   MapTy * m = bmt;
+   ^~~~~
+89-tester.cpp:71:3: note: suggested alternative: ‘BSTMapTy’
+   MapTy * m = bmt;
+   ^~~~~
+   BSTMapTy
+89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
+   MapTy * m = bmt;
+           ^
+89-tester.cpp:71:11: note: suggested alternative: ‘tm’
+   MapTy * m = bmt;
+           ^
+           tm
+89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 5 : Testing with BstMap<std::string,std::string>
+...compiling...
+89-tester.cpp:55:9: error: ‘Map’ does not name a type
+ typedef Map<KEYTYPE,VALTYPE> MapTy;
+         ^~~
+89-tester.cpp: In function ‘int main()’:
+89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
+   MapTy * m = bmt;
+   ^~~~~
+89-tester.cpp:71:3: note: suggested alternative: ‘BSTMapTy’
+   MapTy * m = bmt;
+   ^~~~~
+   BSTMapTy
+89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
+   MapTy * m = bmt;
+           ^
+89-tester.cpp:71:11: note: suggested alternative: ‘tm’
+   MapTy * m = bmt;
+           ^
+           tm
+89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
+...compiling...
+89-tester.cpp:55:9: error: ‘Map’ does not name a type
+ typedef Map<KEYTYPE,VALTYPE> MapTy;
+         ^~~
+89-tester.cpp: In function ‘int main()’:
+89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
+   MapTy * m = bmt;
+   ^~~~~
+89-tester.cpp:71:3: note: suggested alternative: ‘BSTMapTy’
+   MapTy * m = bmt;
+   ^~~~~
+   BSTMapTy
+89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
+   MapTy * m = bmt;
+           ^
+89-tester.cpp:71:11: note: suggested alternative: ‘tm’
+   MapTy * m = bmt;
+           ^
+           tm
+89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 7 : Testing with BstMap<(a custom class we wrote),int>
+...compiling...
+89-tester.cpp:55:9: error: ‘Map’ does not name a type
+ typedef Map<KEYTYPE,VALTYPE> MapTy;
+         ^~~
+89-tester.cpp: In function ‘int main()’:
+89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
+   MapTy * m = bmt;
+   ^~~~~
+89-tester.cpp:71:3: note: suggested alternative: ‘BSTMapTy’
+   MapTy * m = bmt;
+   ^~~~~
+   BSTMapTy
+89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
+   MapTy * m = bmt;
+           ^
+89-tester.cpp:71:11: note: suggested alternative: ‘tm’
+   MapTy * m = bmt;
+           ^
+           tm
+89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
+...compiling...
+89-tester.cpp:55:9: error: ‘Map’ does not name a type
+ typedef Map<KEYTYPE,VALTYPE> MapTy;
+         ^~~
+89-tester.cpp: In function ‘int main()’:
+89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
+   MapTy * m = bmt;
+   ^~~~~
+89-tester.cpp:71:3: note: suggested alternative: ‘BSTMapTy’
+   MapTy * m = bmt;
+   ^~~~~
+   BSTMapTy
+89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
+   MapTy * m = bmt;
+           ^
+89-tester.cpp:71:11: note: suggested alternative: ‘tm’
+   MapTy * m = bmt;
+           ^
+           tm
+89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+The code did not compile.  This test failed.
+-----------------------------------------------
+testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
+...compiling...
+89-tester.cpp:55:9: error: ‘Map’ does not name a type
+ typedef Map<KEYTYPE,VALTYPE> MapTy;
+         ^~~
+89-tester.cpp: In function ‘int main()’:
+89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
+   MapTy * m = bmt;
+   ^~~~~
+89-tester.cpp:71:3: note: suggested alternative: ‘BSTMapTy’
+   MapTy * m = bmt;
+   ^~~~~
+   BSTMapTy
+89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
+   MapTy * m = bmt;
+           ^
+89-tester.cpp:71:11: note: suggested alternative: ‘tm’
+   MapTy * m = bmt;
+           ^
+           tm
+89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
+       MapTy* ptr = (((i+j)&1)==0)? m : m2;
+              ^~~
+The code did not compile.  This test failed.
+
+Overall Grade: F
