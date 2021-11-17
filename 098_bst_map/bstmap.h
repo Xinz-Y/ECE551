@@ -67,13 +67,11 @@ class BstMap : public Map<K, V> {
           Node * temp = (*current)->right;
           delete *current;
           *current = temp;
-          break;
         }
         else if ((*current)->right == NULL) {
           Node * temp = (*current)->left;
           delete *current;
           *current = temp;
-          break;
         }
         else {
           // use the smaller similar node to replace
@@ -91,10 +89,10 @@ class BstMap : public Map<K, V> {
             std::cout << "*********************" << '\n';
           }
           (*it)->right = (*current)->right;
-          delete *current;
+          Node * temp = *current;
           *current = (*it);
           *it = NULL;
-          break;
+          delete temp;
         }
       }
       else {
