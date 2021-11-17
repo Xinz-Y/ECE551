@@ -69,7 +69,6 @@ class BstMap : public Map<K, V> {
     Node ** current = &root;
     while (*current != NULL) {
       //search for the node to move
-      //std::cout << "test if infinity loop" << '\n';
       if ((*current)->key == key) {
         // three cases to consider
         // left is null
@@ -88,13 +87,9 @@ class BstMap : public Map<K, V> {
           Node ** it = &((*current)->left);
           while ((*it)->right != NULL) {
             it = &(*it)->right;
-            //std::cout << "in fact, it changes here" << '\n';
-            // std::cout << "**************" << '\n';
           }
           if (*it != (*current)->left) {
             (*it)->left = (*current)->left;
-            //    std::cout << "it changes" << '\n';
-            //std::cout << "*********************" << '\n';
           }
           (*it)->right = (*current)->right;
           Node * temp = *current;
@@ -117,6 +112,8 @@ class BstMap : public Map<K, V> {
     if (current != NULL) {
       cleanBst(current->left);
       cleanBst(current->right);
+      current->left = NULL;
+      current->right = NULL;
       delete current;
     }
   }
@@ -169,13 +166,13 @@ class BstMap : public Map<K, V> {
   BstMap & operator=(const BstMap & rhs) {
     BstMap temp(rhs);
     //swap the root
-    //Node * tempRoot = root;
-    //root = rhs.root;
-    //temp.root = tempRoot;
-    // temp obejct will go away when operator frame disappear
-    cleanBst(root);
+    Node * tempRoot = root;
     root = temp.root;
-    temp.root = NULL;
+    temp.root = tempRoot;
+    // temp obejct will go away when operator frame disappear
+    // cleanBst(root);
+    //root = temp.root;
+    //temp.root = NULL;
     return *this;
   }
 };

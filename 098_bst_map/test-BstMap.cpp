@@ -18,11 +18,12 @@ int main() {
   BstMap<std::string, std::string> b2(b1);
   b2.printBst();
   b2.add("ccccc", "huadhuawd");
-  //  BstMap<int, int> b3;
+
   b1 = b2;
   std::cout << "NOw is b1" << '\n';
   b1.printBst();
-  std::cout << "assignment finishes " << '\n';
+
+  //std::cout << "assignment finishes " << '\n';
   //bMap.remove(7);
   // bMap.printBst();
   //  std::cout << '\n';
