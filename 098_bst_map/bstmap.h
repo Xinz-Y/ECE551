@@ -108,7 +108,7 @@ class BstMap : public Map<K, V> {
       }
     }
   }
-  void cleanBst(Node * current) {
+  virtual void cleanBst(Node * current) {
     if (current != NULL) {
       cleanBst(current->left);
       cleanBst(current->right);
@@ -121,10 +121,6 @@ class BstMap : public Map<K, V> {
     //delete root;
   }
 
-  // friend std::ostream & operator<<(std::ostream& s,const BstMap & bst){
-  //   s <<
-
-  // }
  private:
   void printInorder(Node * current) {
     if (current != NULL) {
@@ -146,5 +142,30 @@ class BstMap : public Map<K, V> {
     Node * curr = root;
     //    std::cout << "the root points at" << root << "\n";
     printInorder(curr);
+  }
+
+  // Rule of three
+  // copy constructor
+  void recreate(Node * current) {
+    if (current != NULL) {
+      this->add(current->key, current->value);
+      recreate(current->left);
+      recreate(current->right);
+    }
+  }
+  BstMap(const BstMap & rhs) {
+    //uses preorder traversal
+    Node * current = rhs.root;
+    recreate(current);
+  }
+  // assignment operator
+  BstMap & operator=(const BstMap & rhs) {
+    BstMap temp(rhs);
+    //swap the root
+    Node * tempRoot = root;
+    root = rhs.root;
+    rhs.root = tempRoot;
+    // temp obejct will go away when operator frame disappear
+    return *this;
   }
 };
