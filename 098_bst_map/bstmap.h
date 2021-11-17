@@ -64,14 +64,14 @@ class BstMap : public Map<K, V> {
         // three cases to consider
         // left is null
         if ((*current)->left == NULL) {
-          Node * temp = (*current)->right;
-          delete *current;
-          *current = temp;
+          Node * temp = *current;
+          *current = (*current)->right;
+          delete temp;
         }
         else if ((*current)->right == NULL) {
-          Node * temp = (*current)->left;
-          delete *current;
-          *current = temp;
+          Node * temp = *current;
+          *current = (*current)->left;
+          delete temp;
         }
         else {
           // use the smaller similar node to replace
@@ -104,11 +104,11 @@ class BstMap : public Map<K, V> {
     }
   }
   void cleanBst(Node * current) {
-    while (current != NULL) {
+    if (current != NULL) {
       cleanBst(current->left);
       cleanBst(current->right);
       delete current;
-      current = NULL;
+      // current = NULL;
     }
   }
   //postoder traversal
