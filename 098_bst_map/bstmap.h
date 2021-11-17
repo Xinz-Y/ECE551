@@ -167,12 +167,13 @@ class BstMap : public Map<K, V> {
   BstMap & operator=(const BstMap & rhs) {
     BstMap temp(rhs);
     //swap the root
-    Node * tempRoot = root;
-    root = rhs.root;
-    temp.root = tempRoot;
+    //Node * tempRoot = root;
+    //root = rhs.root;
+    //temp.root = tempRoot;
     // temp obejct will go away when operator frame disappear
-    //cleanBst(root);
-    //root = temp.root;
+    cleanBst(root);
+    root = temp.root;
+    temp.root = NULL;
     return *this;
   }
 };
