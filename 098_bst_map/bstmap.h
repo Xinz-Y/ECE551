@@ -28,10 +28,12 @@ class BstMap : public Map<K, V> {
     //recursion part: find which node is NULL
     if (key < current->key) {
       // go left
-      current->left = add(current->left, key, value);
+      Node * newleft = add(current->left, key, value);
+      current->left = newleft;
     }
     else {
-      current->right = add(current->right, key, value);
+      Node * newright = add(current->right, key, value);
+      current->right = newright;
     }
     return current;
   }

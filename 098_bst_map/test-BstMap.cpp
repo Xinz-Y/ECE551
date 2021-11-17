@@ -9,15 +9,15 @@ int main() {
   //ptr->add(0, 0);
   //ptr->add(-4, -4);
   //ptr->remove(0);
-  BstMap<int, int> b1;
-  b1.add(1, 1);
-  b1.add(2, 2);
-  b1.add(-3, -3);
+  BstMap<std::string, std::string> b1;
+  b1.add("ssss", "222");
+  b1.add("bbbs", "sdawd");
+  b1.add("aaaa", "2133333s");
   b1.printBst();
   std::cout << "now below is b2" << '\n';
-  BstMap<int, int> b2(b1);
+  BstMap<std::string, std::string> b2(b1);
   b2.printBst();
-  b2.add(99, 99);
+  b2.add("ccccc", "huadhuawd");
   //  BstMap<int, int> b3;
   b1 = b2;
   std::cout << "NOw is b1" << '\n';
@@ -41,5 +41,6 @@ int main() {
   //delete ptr;
   //bMap.printBst();
   //bMap.remove(-5);
+
   return EXIT_SUCCESS;
 }
