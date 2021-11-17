@@ -1,0 +1,11 @@
+#include <cstdlib>
+#include <iostream>
+
+#include "bstmap.h"
+
+int main() {
+  BstMap<int, int> bMap;
+  bMap.add(11, 11);
+
+  return EXIT_SUCCESS;
+}
