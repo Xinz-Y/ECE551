@@ -16,11 +16,14 @@ int main() {
   std::cout << "((((((((((((((((((((" << '\n';
   std::cout << "Now start to remove " << '\n';
   ;
-  bMap.remove(-1);
+  //  bMap.remove(-1);
   bMap.remove(0);
-  bMap.remove(10);
-  bMap.remove(3);
-  bMap.remove(10111);
   bMap.printBst();
+  std::cout << '\n';
+  //bMap.remove(10);
+  bMap.remove(3);
+  //  bMap.remove(10111);
+  bMap.printBst();
+  bMap.remove(-5);
   return EXIT_SUCCESS;
 }

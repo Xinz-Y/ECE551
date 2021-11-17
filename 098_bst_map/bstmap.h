@@ -59,7 +59,7 @@ class BstMap : public Map<K, V> {
     Node ** current = &root;
     while (*current != NULL) {
       //search for the node to move
-
+      std::cout << "test if infinity loop" << '\n';
       if ((*current)->key == key) {
         // three cases to consider
         // left is null
@@ -67,30 +67,38 @@ class BstMap : public Map<K, V> {
           Node * temp = (*current)->right;
           delete *current;
           *current = temp;
+          break;
         }
         else if ((*current)->right == NULL) {
           Node * temp = (*current)->left;
           delete *current;
           *current = temp;
+          break;
         }
         else {
           // use the smaller similar node to replace
-          Node * it = (*current)->left;
-          while (it->right != NULL) {
-            it = it->right;
+          Node ** it = &((*current)->left);
+          while ((*it)->right != NULL) {
+            it = &(*it)->right;
+            std::cout << "in fact, it changes here" << '\n';
+            std::cout << "**************" << '\n';
           }
           // now it points at the node we want
           //if this node is the direct left child of parent, then the left node pointer of this node should not change
-          if (it == (*current)->left) {
-            it->left = (*current)->left;
+          if (*it != (*current)->left) {
+            (*it)->left = (*current)->left;
+            std::cout << "it changes" << '\n';
+            std::cout << "*********************" << '\n';
           }
-          it->right = (*current)->right;
+          (*it)->right = (*current)->right;
           delete *current;
-          *current = it;
+          *current = (*it);
+          *it = NULL;
+          break;
         }
       }
       else {
-        if ((*current)->key < key) {
+        if ((*current)->key > key) {
           current = &((*current)->left);
         }
         else {
@@ -123,12 +131,12 @@ class BstMap : public Map<K, V> {
       printInorder(current->left);
       std::cout << "The key is " << current->key << " The value is " << current->value
                 << '\n';
-      /*  if (current->left != NULL) {
+      if (current->left != NULL) {
         std::cout << "the left ptr is " << current->left->key << '\n';
       }
       if (current->right != NULL) {
         std::cout << "the right pte is " << current->right->key << '\n';
-	}*/
+      }
       printInorder(current->right);
     }
   }
