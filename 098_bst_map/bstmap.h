@@ -14,6 +14,8 @@ class BstMap : public Map<K, V> {
     Node(K key_, V value_) : key(key_), value(value_), left(NULL), right(NULL){};
     ~Node(){};
   };
+
+ public:
   Node * root;
   Node * add(Node * current, const K & key, const V & value) {
     // use recursion method
