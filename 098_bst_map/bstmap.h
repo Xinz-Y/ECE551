@@ -59,7 +59,7 @@ class BstMap : public Map<K, V> {
     Node ** current = &root;
     while (*current != NULL) {
       //search for the node to move
-      std::cout << "test if infinity loop" << '\n';
+      //std::cout << "test if infinity loop" << '\n';
       if ((*current)->key == key) {
         // three cases to consider
         // left is null
@@ -78,15 +78,13 @@ class BstMap : public Map<K, V> {
           Node ** it = &((*current)->left);
           while ((*it)->right != NULL) {
             it = &(*it)->right;
-            std::cout << "in fact, it changes here" << '\n';
-            std::cout << "**************" << '\n';
+            //std::cout << "in fact, it changes here" << '\n';
+            // std::cout << "**************" << '\n';
           }
-          // now it points at the node we want
-          //if this node is the direct left child of parent, then the left node pointer of this node should not change
           if (*it != (*current)->left) {
             (*it)->left = (*current)->left;
-            std::cout << "it changes" << '\n';
-            std::cout << "*********************" << '\n';
+            //    std::cout << "it changes" << '\n';
+            //std::cout << "*********************" << '\n';
           }
           (*it)->right = (*current)->right;
           Node * temp = *current;
