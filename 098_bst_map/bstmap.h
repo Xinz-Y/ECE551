@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "assert.h"
 #include "map.h"
 template<typename K, typename V>
 class BstMap : public Map<K, V> {
@@ -37,7 +38,7 @@ class BstMap : public Map<K, V> {
 
  public:
   BstMap() : root(NULL){};
-  BstMap(Node * ptr) : root(ptr){};
+  //  BstMap(Node * ptr) : root(ptr){};
   virtual void add(const K & key, const V & value) { root = add(root, key, value); }
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
     // iteration method
@@ -149,13 +150,15 @@ class BstMap : public Map<K, V> {
   // Rule of three
   // copy constructor
   void recreate(Node * current) {
+    //std::cout << "the root points at " << root << '\n';
+    //    assert(root == NULL);
     if (current != NULL) {
-      this->add(current->key, current->value);
+      add(current->key, current->value);
       recreate(current->left);
       recreate(current->right);
     }
   }
-  BstMap(const BstMap & rhs) {
+  BstMap(const BstMap & rhs) : root(NULL) {
     //uses preorder traversal
     Node * current = rhs.root;
     recreate(current);
@@ -166,8 +169,10 @@ class BstMap : public Map<K, V> {
     //swap the root
     Node * tempRoot = root;
     root = rhs.root;
-    rhs.root = tempRoot;
+    temp.root = tempRoot;
     // temp obejct will go away when operator frame disappear
+    //cleanBst(root);
+    //root = temp.root;
     return *this;
   }
 };
