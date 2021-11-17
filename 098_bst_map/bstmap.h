@@ -39,19 +39,24 @@ class BstMap : public Map<K, V> {
   virtual void add(const K & key, const V & value) { root = add(root, key, value); }
   virtual const V & lookup(const K & key) const throw(std::invalid_argument) {
     // iteration method
+    V * ans = NULL;
     Node * current = root;
     while (current != NULL) {
       if (current->key == key) {
-        return current->value;
+        ans = &current->value;
+        break;
       }
-      else if (current->key < key) {
+      else if (current->key > key) {
         current = current->left;
       }
       else {
         current = current->right;
       }
     }
-    throw std::invalid_argument("key does not exist");
+    if (ans == NULL) {
+      throw std::invalid_argument("key does not exist");
+    }
+    return *ans;
   }
 
   virtual void remove(const K & key) {
@@ -108,7 +113,6 @@ class BstMap : public Map<K, V> {
       cleanBst(current->left);
       cleanBst(current->right);
       delete current;
-      // current = NULL;
     }
   }
   //postoder traversal

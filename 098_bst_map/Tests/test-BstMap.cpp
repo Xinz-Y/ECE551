@@ -22,13 +22,22 @@ int main() {
   std::cout << "Now start to remove " << '\n';
   ;
   // bMap.remove(-1);
-  bMap.remove(7);
-  bMap.printBst();
+  //bMap.remove(7);
+  // bMap.printBst();
   std::cout << '\n';
   //bMap.remove(10);
   //bMap.remove(1);
   //  bMap.remove(10111);
-  bMap.printBst();
+  //  int val = bMap.lookup(5);
+  //std::cout << "FInd the value for key 5 is " << val << '\n';
+  try {
+    int val = bMap.lookup(99);
+    std::cout << "find the value for key 99 is" << val << "\n";
+  }
+  catch (std::invalid_argument & e) {
+    std::cout << "cant find the value for 99 " << e.what() << "\n";
+  }
+  //bMap.printBst();
   //bMap.remove(-5);
   return EXIT_SUCCESS;
 }
