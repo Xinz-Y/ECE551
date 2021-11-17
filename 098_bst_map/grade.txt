@@ -1,13 +1,13 @@
-Grading at 11/17/2021:17:38:01.799302
-For commit ID 7b27293c0031c675140d18c55ca35ee01b5896c6
-Grading at Wed Nov 17 12:38:00 EST 2021
+Grading at 11/17/2021:17:40:59.550201
+For commit ID dffa4e147cb985d919f7c3ad997474874a5491bb
+Grading at Wed Nov 17 12:40:58 EST 2021
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In instantiation of ‘BstMap<K, V>& BstMap<K, V>::operator=(const BstMap<K, V>&) [with K = int; V = int]’:
 89-tester.cpp:131:10:   required from here
-bstmap.h:167:14: error: assignment of member ‘BstMap<int, int>::root’ in read-only object
+bstmap.h:169:14: error: assignment of member ‘BstMap<int, int>::root’ in read-only object
      rhs.root = tempRoot;
      ~~~~~~~~~^~~~~~~~~~
 The code did not compile.  This test failed.
@@ -17,7 +17,7 @@ testcase 2 : Testing with BstMap<int,std::string>
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In instantiation of ‘BstMap<K, V>& BstMap<K, V>::operator=(const BstMap<K, V>&) [with K = int; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:131:10:   required from here
-bstmap.h:167:14: error: assignment of member ‘BstMap<int, std::__cxx11::basic_string<char> >::root’ in read-only object
+bstmap.h:169:14: error: assignment of member ‘BstMap<int, std::__cxx11::basic_string<char> >::root’ in read-only object
      rhs.root = tempRoot;
      ~~~~~~~~~^~~~~~~~~~
 The code did not compile.  This test failed.
@@ -27,7 +27,7 @@ testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In instantiation of ‘BstMap<K, V>& BstMap<K, V>::operator=(const BstMap<K, V>&) [with K = int; V = Tester]’:
 89-tester.cpp:131:10:   required from here
-bstmap.h:167:14: error: assignment of member ‘BstMap<int, Tester>::root’ in read-only object
+bstmap.h:169:14: error: assignment of member ‘BstMap<int, Tester>::root’ in read-only object
      rhs.root = tempRoot;
      ~~~~~~~~~^~~~~~~~~~
 The code did not compile.  This test failed.
@@ -37,7 +37,7 @@ testcase 4 : Testing with BstMap<std::string,int>
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In instantiation of ‘BstMap<K, V>& BstMap<K, V>::operator=(const BstMap<K, V>&) [with K = std::__cxx11::basic_string<char>; V = int]’:
 89-tester.cpp:131:10:   required from here
-bstmap.h:167:14: error: assignment of member ‘BstMap<std::__cxx11::basic_string<char>, int>::root’ in read-only object
+bstmap.h:169:14: error: assignment of member ‘BstMap<std::__cxx11::basic_string<char>, int>::root’ in read-only object
      rhs.root = tempRoot;
      ~~~~~~~~~^~~~~~~~~~
 The code did not compile.  This test failed.
@@ -47,7 +47,7 @@ testcase 5 : Testing with BstMap<std::string,std::string>
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In instantiation of ‘BstMap<K, V>& BstMap<K, V>::operator=(const BstMap<K, V>&) [with K = std::__cxx11::basic_string<char>; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:131:10:   required from here
-bstmap.h:167:14: error: assignment of member ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::root’ in read-only object
+bstmap.h:169:14: error: assignment of member ‘BstMap<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> >::root’ in read-only object
      rhs.root = tempRoot;
      ~~~~~~~~~^~~~~~~~~~
 The code did not compile.  This test failed.
@@ -57,7 +57,7 @@ testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In instantiation of ‘BstMap<K, V>& BstMap<K, V>::operator=(const BstMap<K, V>&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
 89-tester.cpp:131:10:   required from here
-bstmap.h:167:14: error: assignment of member ‘BstMap<std::__cxx11::basic_string<char>, Tester>::root’ in read-only object
+bstmap.h:169:14: error: assignment of member ‘BstMap<std::__cxx11::basic_string<char>, Tester>::root’ in read-only object
      rhs.root = tempRoot;
      ~~~~~~~~~^~~~~~~~~~
 The code did not compile.  This test failed.
@@ -67,7 +67,7 @@ testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In instantiation of ‘BstMap<K, V>& BstMap<K, V>::operator=(const BstMap<K, V>&) [with K = Tester; V = int]’:
 89-tester.cpp:131:10:   required from here
-bstmap.h:167:14: error: assignment of member ‘BstMap<Tester, int>::root’ in read-only object
+bstmap.h:169:14: error: assignment of member ‘BstMap<Tester, int>::root’ in read-only object
      rhs.root = tempRoot;
      ~~~~~~~~~^~~~~~~~~~
 The code did not compile.  This test failed.
@@ -77,7 +77,7 @@ testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In instantiation of ‘BstMap<K, V>& BstMap<K, V>::operator=(const BstMap<K, V>&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
 89-tester.cpp:131:10:   required from here
-bstmap.h:167:14: error: assignment of member ‘BstMap<Tester, std::__cxx11::basic_string<char> >::root’ in read-only object
+bstmap.h:169:14: error: assignment of member ‘BstMap<Tester, std::__cxx11::basic_string<char> >::root’ in read-only object
      rhs.root = tempRoot;
      ~~~~~~~~~^~~~~~~~~~
 The code did not compile.  This test failed.
@@ -87,7 +87,7 @@ testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wr
 In file included from 89-tester.cpp:1:0:
 bstmap.h: In instantiation of ‘BstMap<K, V>& BstMap<K, V>::operator=(const BstMap<K, V>&) [with K = Tester; V = Tester]’:
 89-tester.cpp:131:10:   required from here
-bstmap.h:167:14: error: assignment of member ‘BstMap<Tester, Tester>::root’ in read-only object
+bstmap.h:169:14: error: assignment of member ‘BstMap<Tester, Tester>::root’ in read-only object
      rhs.root = tempRoot;
      ~~~~~~~~~^~~~~~~~~~
 The code did not compile.  This test failed.
