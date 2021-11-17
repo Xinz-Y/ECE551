@@ -1,9 +1,9 @@
 #include <iostream>
 #include <stdexcept>
 
-//#include "map.h"
+#include "map.h"
 template<typename K, typename V>
-class BstMap {
+class BstMap : public Map<K, V> {
  public:
   class Node {
    public:
