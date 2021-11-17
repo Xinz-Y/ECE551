@@ -81,7 +81,7 @@ class BstMap : public Map<K, V> {
           }
           // now it points at the node we want
           //if this node is the direct left child of parent, then the left node pointer of this node should not change
-          if (it != (*current)->left) {
+          if (it == (*current)->left) {
             it->left = (*current)->left;
           }
           it->right = (*current)->right;
@@ -123,8 +123,12 @@ class BstMap : public Map<K, V> {
       printInorder(current->left);
       std::cout << "The key is " << current->key << " The value is " << current->value
                 << '\n';
-      std::cout << "the left ptr is " << current->left << "the right pte is "
-                << current->right << '\n';
+      /*  if (current->left != NULL) {
+        std::cout << "the left ptr is " << current->left->key << '\n';
+      }
+      if (current->right != NULL) {
+        std::cout << "the right pte is " << current->right->key << '\n';
+	}*/
       printInorder(current->right);
     }
   }
