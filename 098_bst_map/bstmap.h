@@ -93,9 +93,9 @@ class BstMap : public Map<K, V> {
             (*it)->left = (*current)->left;
           }
           (*it)->right = (*current)->right;
-          //delete *current;
-          //*current = *it;
-          //*it = downNode;
+          //          delete *current;
+          // *current = *it;
+          // *it = downNode;
           Node * temp = *current;
           *current = (*it);
           *it = downNode;
