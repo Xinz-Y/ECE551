@@ -88,14 +88,18 @@ class BstMap : public Map<K, V> {
           while ((*it)->right != NULL) {
             it = &(*it)->right;
           }
+          Node * downNode = (*it)->left;
           if (*it != (*current)->left) {
             (*it)->left = (*current)->left;
           }
           (*it)->right = (*current)->right;
-          Node * temp = *current;
-          *current = (*it);
-          *it = NULL;
-          delete temp;
+          delete *current;
+          *current = *it;
+          *it = downNode;
+          //Node * temp = *current;
+          //*current = (*it);
+          //*it = NULL;
+          //delete temp;
         }
       }
       else {
@@ -170,9 +174,6 @@ class BstMap : public Map<K, V> {
     root = temp.root;
     temp.root = tempRoot;
     // temp obejct will go away when operator frame disappear
-    // cleanBst(root);
-    //root = temp.root;
-    //temp.root = NULL;
     return *this;
   }
 };
