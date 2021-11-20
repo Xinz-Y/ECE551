@@ -141,6 +141,7 @@ Page::Page(const std::string s) {
               << "\n";
     exit(EXIT_FAILURE);
   }
+  pg_file.close();
 }
 
 std::ostream & operator<<(std::ostream & stream, const Page & pg) {
