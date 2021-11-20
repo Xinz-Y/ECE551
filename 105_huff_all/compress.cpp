@@ -39,8 +39,8 @@ void writeCompressedOutput(const char * inFile,
   //and write the proper bit string with the BitFileWriter
   //check if theMap contains the char
   char c;
-  while ((c = inputF.get()) != EOF) {
-    std::map<unsigned, BitString>::const_iterator it = theMap.find(c);
+  while (inputF.get(c)) {
+    std::map<unsigned, BitString>::const_iterator it = theMap.find((unsigned char)c);
     if (it == theMap.end()) {
       std::cerr << "Something wrong with the map construction" << '\n';
       exit(EXIT_FAILURE);
