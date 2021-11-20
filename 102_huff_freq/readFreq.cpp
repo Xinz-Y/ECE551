@@ -39,5 +39,6 @@ uint64_t * readFrequencies(const char * fname) {
     ans[c]++;
   }
   ans[256]++;
+  file.close();
   return ans;
 }
