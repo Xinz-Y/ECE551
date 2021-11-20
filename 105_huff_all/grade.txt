@@ -1,6 +1,6 @@
-Grading at 11/20/2021:22:24:44.503303
-For commit ID 1d03a36dbc6d79af53422b8197a6411803de0fa4
-Grading at Sat Nov 20 17:23:00 EST 2021
+Grading at 11/20/2021:22:28:59.130151
+For commit ID 1b0e13a45e7dad903a7fb3889452c0432b995c0f
+Grading at Sat Nov 20 17:28:54 EST 2021
 compiling
 g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++98 -o compress  bitstring.o  buildTree.o  compress.o  node.o  readFreq.o
 Make succeed, compress created
@@ -8,9 +8,8 @@ Testcase 1
 -----------------------
   - Valgrind was clean (no errors, no memory leaks)
 Decompressing, and comparing to original...:
-Line_3_did_not_match
-Your file did not match the expected output
-**Testcase failed **
+Your file matched the expected output
+Testcase passed 
 Testcase 2
 -----------------------
   - Valgrind was clean (no errors, no memory leaks)
@@ -19,10 +18,29 @@ Your file matched the expected output
 Testcase passed 
 Testcase 3
 -----------------------
-  - Valgrind was clean (no errors, no memory leaks)
-Decompressing, and comparing to original...:
-Line_102306_did_not_match
-Your file did not match the expected output
-**Testcase failed **
+  - Valgrind showed memory leaks
+Valgrind reported errors (test failed).
+==17701== Memcheck, a memory error detector
+==17701== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==17701== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==17701== Command: ./compress /usr/share/dict/words theirs.3.compressed
+==17701== Parent PID: 17700
+==17701== 
+==17701== 
+==17701== HEAP SUMMARY:
+==17701==     in use at exit: 102,000 bytes in 438 blocks
+==17701==   total heap usage: 1,698 allocs, 1,260 frees, 574,296 bytes allocated
+==17701== 
+==17701== LEAK SUMMARY:
+==17701==    definitely lost: 0 bytes in 0 blocks
+==17701==    indirectly lost: 0 bytes in 0 blocks
+==17701==      possibly lost: 0 bytes in 0 blocks
+==17701==    still reachable: 102,000 bytes in 438 blocks
+==17701==         suppressed: 0 bytes in 0 blocks
+==17701== Reachable blocks (those to which a pointer was found) are not shown.
+==17701== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==17701== 
+==17701== For counts of detected and suppressed errors, rerun with: -v
+==17701== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
-Overall Grade: F
+Overall Grade: D
