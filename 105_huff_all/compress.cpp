@@ -38,7 +38,7 @@ void writeCompressedOutput(const char * inFile,
   //You need to read the input file, lookup the characters in the map,
   //and write the proper bit string with the BitFileWriter
   //check if theMap contains the char
-  int c;
+  char c;
   while ((c = inputF.get()) != EOF) {
     std::map<unsigned, BitString>::const_iterator it = theMap.find(c);
     if (it == theMap.end()) {
@@ -49,7 +49,9 @@ void writeCompressedOutput(const char * inFile,
   }
 
   //dont forget to lookup 256 for the EOF marker, and write it out.
-
+  std::map<unsigned, BitString>::const_iterator it = theMap.find(256);
+  //assert(it != theMap.end());
+  bfw.writeBitString(it->second);
   //BitFileWriter will close the output file in its destructor
   //but you probably need to close your input file.
   inputF.close();
