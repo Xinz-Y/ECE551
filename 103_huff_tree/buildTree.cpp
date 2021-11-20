@@ -4,7 +4,9 @@ Node * buildTree(uint64_t * counts) {
   priority_queue_t pq;
   //make a priority queue
   for (unsigned i = 0; i < 257; i++) {
-    pq.push(new Node(i, counts[i]));
+    if (counts[i] != 0) {
+      pq.push(new Node(i, counts[i]));
+    }
   }
   while (pq.size() != 1) {
     // build the tree bt poping the top two nodes in the pq
