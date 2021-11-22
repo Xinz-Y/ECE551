@@ -5,9 +5,13 @@
 #include "Story.hpp"
 #include "assert.h"
 #include "myQueue.hpp"
-int main() {
+int main(int argc, char ** argv) {
+  if (argc != 2) {
+    std::cerr << "wrong number of argv" << '\n';
+    return EXIT_FAILURE;
+  }
   Story sy;
-  sy.makeStory("./story1");
+  sy.makeStory(argv[1]);
   myQueue<std::vector<int> > queue;
   sy.search<myQueue<std::vector<int> > >(queue);
   assert(queue.empty());
