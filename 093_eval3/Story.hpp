@@ -1,11 +1,12 @@
 #include <cstdlib>
 #include <cstring>
+#include <set>
 #include <sstream>
 
 #include "Page.hpp"
 // This method is to update the prev_list field in pges
 // meanwhile check if every page has a source to come from
-void makePgSource(std::vector<Page> pages) {
+void makePgSource(std::vector<Page> & pages) {
   //iterate every page and find all its sources except page1
   // i =1 becasue we want find sources of pages from page2
   for (size_t i = 1; i < pages.size(); ++i) {
@@ -44,6 +45,8 @@ class Story {
   Story & makeStory(const std::string & dirName);
   //  void readStory();
   std::vector<Page> & getPages() { return pages; }
+  template<typename container>
+  void search(container worklist);
 };
 
 Story & Story::makeStory(const std::string & dirName) {
@@ -108,4 +111,32 @@ Story & Story::makeStory(const std::string & dirName) {
   makePgSource(pages);
   //  std::cerr << "All the pages are correct! Load stroy suceessfully!" << '\n';
   return *this;
+}
+
+//for step3 we only need to do bfs by queue
+template<typename container>
+void Story::search(container worklist) {
+  std::set<int> visited;
+  // the root of the pages is the page1
+  std::vector<int> path;
+  path.push_back(0);
+  //we push the path into the container
+  worklist.push(path);
+  std::vector<int> currentPath;
+  while (!worklist.empty()) {
+    currentPath = worklist.peek();
+    int currentVer = currentPath[currentPath.size() - 1];
+    if (visited.find(currentVer) == visited.end()) {
+      pages[currentVer].setDepth(currentPath.size() - 1);
+      visited.insert(currentVer);
+      if (pages[currentVer].IsLosePg() || pages[currentVer].IsWinPg()) {
+        continue;
+      }
+      for (size_t i = 0; i < pages[currentVer].getPgTogo().size(); i++) {
+        currentPath.push_back(pages[currentVer].getPgTogo()[i] - 1);
+        worklist.push(currentPath);
+        currentPath.pop_back();
+      }
+    }
+  }
 }

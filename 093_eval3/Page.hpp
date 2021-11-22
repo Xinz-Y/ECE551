@@ -28,6 +28,7 @@ class Page {
   bool IsWin;
   bool IsLose;
   std::vector<int> prev_list;
+  int depth;
   // int * next_list;
   class Navigation {
    public:
@@ -46,7 +47,7 @@ class Page {
 
  public:
   // Page() : pg_num(0), prev_list(NULL), next_list(NULL){};
-  Page() : pg_num(0), IsWin(false), IsLose(false){};
+  Page() : pg_num(0), IsWin(false), IsLose(false), depth(0){};
   explicit Page(const std::string s);
   friend std::ostream & operator<<(std::ostream & steam, const Page & pg);
   bool IsWinPg() const { return IsWin; }
@@ -56,6 +57,9 @@ class Page {
   void setPrev(const std::vector<int> & Pgsources) {
     prev_list = Pgsources;  //deep copy by default
   }
+  std::vector<int> getPgPrev() const { return prev_list; }
+  void setDepth(int dep) { depth = dep; }
+  int getDepth() const { return depth; }
 };
 
 // for now the prevlist and nextlist are all null

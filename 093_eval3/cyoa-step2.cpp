@@ -67,7 +67,6 @@ int main(int argc, char ** argv) {
     current = pages[act_pg_num - 1];
   }
   // this page is win or lose
-  //  std::cout << current.getPgNum() << '\n';
   std::cout << current;
   return EXIT_SUCCESS;
 }
