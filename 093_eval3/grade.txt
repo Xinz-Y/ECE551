@@ -1,6 +1,6 @@
-Grading at 11/22/2021:20:32:29.317024
-For commit ID bfc2c3df25e88fd45d748d7f0446ff6be8201903
-Grading at Mon Nov 22 15:32:12 EST 2021
+Grading at 11/22/2021:21:48:50.411119
+For commit ID 906b4176a6fc41c38825f1669fd9fcaeed284fc9
+Grading at Mon Nov 22 16:48:33 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -80,24 +80,8 @@ Test case 15 (success): cyoa-step3 /usr/local/ece551/cyoa/story1
 Your file matched the expected output
 +-----------------------------------------------------------------------+
 Test case 16 (success): cyoa-step3 /usr/local/ece551/cyoa/story2
-7,14c7,12
-< Page 7:2
-< Page 8:2
-< Page 9:2
-< Page 10:3
-< Page 11:2
-< Page 12:2
-< Page 13:3
-< Page 14:3
----
-> Page 7:3
-> Page 8:3
-> Page 9:5
-> Page 10:4
-> Page 11:4
-> Page 12:4
-Your file did not match the expected output
-Step 3: Failed test cases as above
+Your file matched the expected output
+Step 3: PASSED Pre-Grader Test Cases
 
 Compiling cyoa-step4
 The code did not compile!
