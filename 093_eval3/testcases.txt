@@ -1,0 +1,11 @@
+#error
+cyoa-step1 invaid_pg_num.txt
+#success
+cyoa-step1 story1/page1.txt
+cyoa-step2 story1 < test1/input2.txt
+cyoa-step3 story1
+cyoa-step4 story1
+cyoa-step1 myStory/page1.txt
+cyoa-step2 myStory < test1/input1.txt
+cyoa-step3 myStory
+cyoa-step4 myStory
