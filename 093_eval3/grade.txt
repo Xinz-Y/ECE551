@@ -1,6 +1,6 @@
-Grading at 11/23/2021:21:12:31.305116
-For commit ID 06b63766fdc88b6f835835b9f84386c486efeb66
-Grading at Tue Nov 23 16:12:12 EST 2021
+Grading at 11/23/2021:21:25:00.795490
+For commit ID 442693e5acb40c6cc9526ab96b06d9a6dd8ae672
+Grading at Tue Nov 23 16:24:32 EST 2021
 Checking Step 1 test cases required for extra credit
 
 Compiling cyoa-step1
@@ -93,6 +93,59 @@ Test case 18 (success): cyoa-step4 /usr/local/ece551/cyoa/story2
 Your file matched the expected output
 Step 4: PASSED Pre-Grader Test Cases
 Running your test cases
-Cannot proceed without testcases.txt
+
+Compiling cyoa-step1
+make: 'cyoa-step1' is up to date.
++-----------------------------------------------------------------------+
+Test case 1 (error): cyoa-step1 invaid_pg_num.txt
+Your program successfully indicated a failure case
++-----------------------------------------------------------------------+
+Test case 2 (success): cyoa-step1 story1/page1.txt
+Your file matched the expected output
+
+Compiling cyoa-step2
+make: 'cyoa-step2' is up to date.
++-----------------------------------------------------------------------+
+Test case 3 (success): cyoa-step2 story1 < test1/input2.txt
+Your file matched the expected output
+
+Compiling cyoa-step3
+make: 'cyoa-step3' is up to date.
++-----------------------------------------------------------------------+
+Test case 4 (success): cyoa-step3 story1
+Your file matched the expected output
+
+Compiling cyoa-step4
+make: 'cyoa-step4' is up to date.
++-----------------------------------------------------------------------+
+Test case 5 (success): cyoa-step4 story1
+Your file matched the expected output
+
+Compiling cyoa-step1
+make: 'cyoa-step1' is up to date.
++-----------------------------------------------------------------------+
+Test case 6 (success): cyoa-step1 myStory/page1.txt
+Your file matched the expected output
+
+Compiling cyoa-step2
+make: 'cyoa-step2' is up to date.
++-----------------------------------------------------------------------+
+Test case 7 (success): cyoa-step2 myStory < test1/input1.txt
+Your file matched the expected output
+
+Compiling cyoa-step3
+make: 'cyoa-step3' is up to date.
++-----------------------------------------------------------------------+
+Test case 8 (success): cyoa-step3 myStory
+Your file matched the expected output
+
+Compiling cyoa-step4
+make: 'cyoa-step4' is up to date.
++-----------------------------------------------------------------------+
+Test case 9 (success): cyoa-step4 myStory
+Your file matched the expected output
+
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
