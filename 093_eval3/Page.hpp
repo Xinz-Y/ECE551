@@ -184,11 +184,14 @@ std::ostream & operator<<(std::ostream & stream, const Page & pg) {
 
   return stream;
 }
-
+//note for the win and lose pages, the pgtogo is not empty, it has one element -1
 std::vector<int> Page::getPgTogo() const {
   std::vector<int> ans;
   for (size_t i = 0; i < navi.choices.size(); ++i) {
     ans.push_back(navi.choices[i].first);
+    // we can improve here by dectecting if this number is -1,
+    //then return an empty vector instead of a one element -1 vector
+    //this can avoid write continue in the search and inf method
   }
   return ans;
 }

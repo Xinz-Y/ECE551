@@ -2,8 +2,22 @@
 #include <cstring>
 #include <set>
 #include <sstream>
+#include <stack>
 
 #include "Page.hpp"
+
+//test if two veector contain the same element
+bool checkSameVer(std::vector<std::pair<int, int> > vec1,
+                  std::vector<std::pair<int, int> > vec2) {
+  for (size_t i = 0; i < vec1.size(); i++) {
+    for (size_t j = 0; j < vec2.size(); j++) {
+      if (vec2[j] == vec1[i]) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
 // This method is to update the prev_list field in pges
 // meanwhile check if every page has a source to come from
 void makePgSource(std::vector<Page> & pages) {
@@ -36,7 +50,8 @@ void makePgSource(std::vector<Page> & pages) {
 class Story {
  private:
   std::vector<Page> pages;
-  std::vector<int> win_pages;  //maybe many win pages
+  std::vector<int>
+      win_pages;  //maybe many win pages;they are actual pages numbers,-1 for index
   std::vector<int> lose_pages;
   int total_PgNum;
 
@@ -47,6 +62,7 @@ class Story {
   std::vector<Page> & getPages() { return pages; }
   template<typename container>
   void search(container worklist);
+  std::vector<std::vector<std::pair<int, int> > > findAcyclicPath();
 };
 
 Story & Story::makeStory(const std::string & dirName) {
@@ -139,4 +155,87 @@ void Story::search(container worklist) {
       }
     }
   }
+  // now check if all the nodes are visited, if not means there are some pages are unreachable
+  if (visited.size() != pages.size()) {
+    //find which vertex is unreachable
+    for (size_t i = 0; i < pages.size(); i++) {
+      if (visited.find(i) == visited.end()) {
+        pages[i].setDepth(-1);
+      }
+    }
+  }
+}
+//using stack
+//our path need to be a vector of pair<pagetogo,choice>
+std::vector<std::vector<std::pair<int, int> > > Story::findAcyclicPath() {
+  std::stack<std::vector<std::pair<int, int> > > worklist;
+  std::set<int> visited;
+  std::vector<std::vector<std::pair<int, int> > > sucPath;
+  std::vector<std::pair<int, int> > path;
+  path.push_back(std::pair<int, int>(0, 0));
+  worklist.push(path);
+  std::vector<std::pair<int, int> > currentPath;
+  while (!worklist.empty()) {
+    currentPath = worklist.top();
+    worklist.pop();
+    int currentVer = currentPath[currentPath.size() - 1].first;
+    if (visited.find(currentVer) == visited.end()) {
+      visited.insert(currentVer);
+      if (pages[currentVer].IsLosePg()) {
+        continue;
+      }
+      if (pages[currentVer].IsWinPg()) {
+        sucPath.push_back(currentPath);
+        continue;
+      }
+      for (size_t i = 0; i < pages[currentVer].getPgTogo().size(); i++) {
+        // now go through the neighbours of the currentVer
+        currentPath.push_back(
+            std::pair<int, int>(pages[currentVer].getPgTogo()[i] - 1, i));
+        worklist.push(currentPath);
+        currentPath.pop_back();
+      }
+    }
+    else {
+      //if currentVer in the visited, but in one of the sucPath then we have a new way to win
+      for (size_t i = 0; i < sucPath.size(); i++) {
+        //here since we add a new path in it, to avoid repeate check if two path same
+        if (sucPath[i] == currentPath) {
+          continue;
+        }
+        for (size_t j = 0; j < sucPath[i].size(); j++) {
+          bool isCycle = false;
+          if (sucPath[i][j].first == currentVer) {
+            //find a new sucPath
+            std::vector<std::pair<int, int> > newPath = currentPath;
+            // if j is the last element of sucPath[i]
+            for (size_t k = j + 1; k < sucPath[i].size(); k++) {
+              //here we need a check whether a cycle if the vertex before currentVer appear twice in the newPath
+              for (size_t m = 0; m < currentPath.size(); m++) {
+                if (sucPath[i][k].first == currentPath[m].first) {
+                  isCycle = true;
+                  std::cout << "we find a cycle here" << '\n';
+                  break;
+                }
+              }
+              newPath.push_back(sucPath[i][k]);
+            }
+            if (isCycle) {
+              break;
+            }
+            sucPath.push_back(newPath);
+            break;
+          }
+        }
+      }
+    }
+  }
+  // if (visited.size() != pages.size()) {
+  //   for (size_t i = 0; i < win_pages.size(); i++) {
+  //     if (visited.find(win_pages[i] - 1) == visited.end()) {
+  //       pages[win_pages[i] - 1].setDepth(-1);
+  //     }
+  //   }
+  // }
+  return sucPath;
 }

@@ -18,7 +18,13 @@ int main(int argc, char ** argv) {
   std::vector<Page> pages = sy.getPages();
   for (size_t i = 0; i < pages.size(); i++) {
     int dep = pages[i].getDepth();
-    std::cout << "Page " << i + 1 << ":" << dep << '\n';
+    if (dep != -1) {
+      std::cout << "Page " << i + 1 << ":" << dep << '\n';
+    }
+    else {
+      std::cout << "Page " << i + 1 << " is not reachable" << '\n';
+    }
   }
+
   return EXIT_SUCCESS;
 }
